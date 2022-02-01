@@ -3,19 +3,41 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		401D3A612783138A00178703 /* levelOne.csv in Resources */ = {isa = PBXBuildFile; fileRef = 401D3A602783138A00178703 /* levelOne.csv */; };
+		401D3A632783139B00178703 /* levelThree.csv in Resources */ = {isa = PBXBuildFile; fileRef = 401D3A622783139B00178703 /* levelThree.csv */; };
+		401D3A6527831B0A00178703 /* QuizScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401D3A6427831B0A00178703 /* QuizScreenViewController.swift */; };
+		4033487A278C668900FF052F /* UIColor+ShadowColorRed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40334879278C668900FF052F /* UIColor+ShadowColorRed.swift */; };
+		4033487C278C66B400FF052F /* PressableMaterialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4033487B278C66B400FF052F /* PressableMaterialButton.swift */; };
+		407B72A0278DAF6C00F7AB05 /* levelFour.csv in Resources */ = {isa = PBXBuildFile; fileRef = 407B729F278DAF6C00F7AB05 /* levelFour.csv */; };
+		407B72A2278DAF7D00F7AB05 /* levelFive.csv in Resources */ = {isa = PBXBuildFile; fileRef = 407B72A1278DAF7D00F7AB05 /* levelFive.csv */; };
+		408664DC27919BCE00588AE7 /* SavedAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408664DB27919BCE00588AE7 /* SavedAnswer.swift */; };
 		4097451027812AB6007EE736 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4097450F27812AB6007EE736 /* AppDelegate.swift */; };
 		4097451227812AB6007EE736 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4097451127812AB6007EE736 /* SceneDelegate.swift */; };
 		4097451427812AB6007EE736 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4097451327812AB6007EE736 /* ViewController.swift */; };
 		4097451727812AB6007EE736 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4097451527812AB6007EE736 /* Main.storyboard */; };
 		4097451927812AC1007EE736 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4097451827812AC1007EE736 /* Assets.xcassets */; };
 		4097451C27812AC1007EE736 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4097451A27812AC1007EE736 /* LaunchScreen.storyboard */; };
+		4097452627812C75007EE736 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4097452527812C75007EE736 /* ScoreViewController.swift */; };
+		4097452827812E77007EE736 /* levelTwo.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4097452727812E77007EE736 /* levelTwo.csv */; };
+		4097452B27813978007EE736 /* correct.png in Resources */ = {isa = PBXBuildFile; fileRef = 4097452927813978007EE736 /* correct.png */; };
+		4097452C27813978007EE736 /* incorrect.png in Resources */ = {isa = PBXBuildFile; fileRef = 4097452A27813978007EE736 /* incorrect.png */; };
+		D9045FE0DB67B15027835FF9 /* Pods_RikuQuizApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 585525A99D33CF79298B75B6 /* Pods_RikuQuizApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2535B4AB0E984A27B42FFB95 /* Pods-RikuQuizApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RikuQuizApp.debug.xcconfig"; path = "Target Support Files/Pods-RikuQuizApp/Pods-RikuQuizApp.debug.xcconfig"; sourceTree = "<group>"; };
+		401D3A602783138A00178703 /* levelOne.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = levelOne.csv; sourceTree = "<group>"; };
+		401D3A622783139B00178703 /* levelThree.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = levelThree.csv; sourceTree = "<group>"; };
+		401D3A6427831B0A00178703 /* QuizScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizScreenViewController.swift; sourceTree = "<group>"; };
+		40334879278C668900FF052F /* UIColor+ShadowColorRed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+ShadowColorRed.swift"; sourceTree = "<group>"; };
+		4033487B278C66B400FF052F /* PressableMaterialButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressableMaterialButton.swift; sourceTree = "<group>"; };
+		407B729F278DAF6C00F7AB05 /* levelFour.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = levelFour.csv; sourceTree = "<group>"; };
+		407B72A1278DAF7D00F7AB05 /* levelFive.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = levelFive.csv; sourceTree = "<group>"; };
+		408664DB27919BCE00588AE7 /* SavedAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedAnswer.swift; sourceTree = "<group>"; };
 		4097450C27812AB5007EE736 /* RikuQuizApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RikuQuizApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4097450F27812AB6007EE736 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4097451127812AB6007EE736 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +46,12 @@
 		4097451827812AC1007EE736 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4097451B27812AC1007EE736 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4097451D27812AC1007EE736 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4097452527812C75007EE736 /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
+		4097452727812E77007EE736 /* levelTwo.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = levelTwo.csv; sourceTree = "<group>"; };
+		4097452927813978007EE736 /* correct.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = correct.png; sourceTree = "<group>"; };
+		4097452A27813978007EE736 /* incorrect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = incorrect.png; sourceTree = "<group>"; };
+		585525A99D33CF79298B75B6 /* Pods_RikuQuizApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RikuQuizApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8F831D9D1D1EBE61DB9FD0B /* Pods-RikuQuizApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RikuQuizApp.release.xcconfig"; path = "Target Support Files/Pods-RikuQuizApp/Pods-RikuQuizApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9045FE0DB67B15027835FF9 /* Pods_RikuQuizApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +71,8 @@
 			children = (
 				4097450E27812AB6007EE736 /* RikuQuizApp */,
 				4097450D27812AB5007EE736 /* Products */,
+				C297BC0DEB4DAEDD2BCE45EA /* Pods */,
+				AF655DC1D29632E640FC62AB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,12 +90,41 @@
 				4097450F27812AB6007EE736 /* AppDelegate.swift */,
 				4097451127812AB6007EE736 /* SceneDelegate.swift */,
 				4097451327812AB6007EE736 /* ViewController.swift */,
+				401D3A6427831B0A00178703 /* QuizScreenViewController.swift */,
+				4097452527812C75007EE736 /* ScoreViewController.swift */,
+				408664DB27919BCE00588AE7 /* SavedAnswer.swift */,
+				4033487B278C66B400FF052F /* PressableMaterialButton.swift */,
+				40334879278C668900FF052F /* UIColor+ShadowColorRed.swift */,
+				401D3A602783138A00178703 /* levelOne.csv */,
+				4097452727812E77007EE736 /* levelTwo.csv */,
+				401D3A622783139B00178703 /* levelThree.csv */,
+				407B729F278DAF6C00F7AB05 /* levelFour.csv */,
+				407B72A1278DAF7D00F7AB05 /* levelFive.csv */,
 				4097451527812AB6007EE736 /* Main.storyboard */,
+				4097452927813978007EE736 /* correct.png */,
+				4097452A27813978007EE736 /* incorrect.png */,
 				4097451827812AC1007EE736 /* Assets.xcassets */,
 				4097451A27812AC1007EE736 /* LaunchScreen.storyboard */,
 				4097451D27812AC1007EE736 /* Info.plist */,
 			);
 			path = RikuQuizApp;
+			sourceTree = "<group>";
+		};
+		AF655DC1D29632E640FC62AB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				585525A99D33CF79298B75B6 /* Pods_RikuQuizApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C297BC0DEB4DAEDD2BCE45EA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2535B4AB0E984A27B42FFB95 /* Pods-RikuQuizApp.debug.xcconfig */,
+				C8F831D9D1D1EBE61DB9FD0B /* Pods-RikuQuizApp.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +134,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4097452027812AC1007EE736 /* Build configuration list for PBXNativeTarget "RikuQuizApp" */;
 			buildPhases = (
+				FEFAF15035396E04C378EC8C /* [CP] Check Pods Manifest.lock */,
 				4097450827812AB5007EE736 /* Sources */,
 				4097450927812AB5007EE736 /* Frameworks */,
 				4097450A27812AB5007EE736 /* Resources */,
+				D0691157AF590F9640977C9F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -124,13 +186,62 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				401D3A612783138A00178703 /* levelOne.csv in Resources */,
+				401D3A632783139B00178703 /* levelThree.csv in Resources */,
+				4097452B27813978007EE736 /* correct.png in Resources */,
+				4097452C27813978007EE736 /* incorrect.png in Resources */,
 				4097451C27812AC1007EE736 /* LaunchScreen.storyboard in Resources */,
 				4097451927812AC1007EE736 /* Assets.xcassets in Resources */,
 				4097451727812AB6007EE736 /* Main.storyboard in Resources */,
+				407B72A2278DAF7D00F7AB05 /* levelFive.csv in Resources */,
+				407B72A0278DAF6C00F7AB05 /* levelFour.csv in Resources */,
+				4097452827812E77007EE736 /* levelTwo.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D0691157AF590F9640977C9F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RikuQuizApp/Pods-RikuQuizApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RikuQuizApp/Pods-RikuQuizApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RikuQuizApp/Pods-RikuQuizApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FEFAF15035396E04C378EC8C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RikuQuizApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4097450827812AB5007EE736 /* Sources */ = {
@@ -139,7 +250,12 @@
 			files = (
 				4097451427812AB6007EE736 /* ViewController.swift in Sources */,
 				4097451027812AB6007EE736 /* AppDelegate.swift in Sources */,
+				4097452627812C75007EE736 /* ScoreViewController.swift in Sources */,
+				408664DC27919BCE00588AE7 /* SavedAnswer.swift in Sources */,
+				401D3A6527831B0A00178703 /* QuizScreenViewController.swift in Sources */,
 				4097451227812AB6007EE736 /* SceneDelegate.swift in Sources */,
+				4033487A278C668900FF052F /* UIColor+ShadowColorRed.swift in Sources */,
+				4033487C278C66B400FF052F /* PressableMaterialButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +399,7 @@
 		};
 		4097452127812AC1007EE736 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2535B4AB0E984A27B42FFB95 /* Pods-RikuQuizApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -296,12 +413,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.techacademy.masaya.nakakuki.RikuQuizApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		4097452227812AC1007EE736 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8F831D9D1D1EBE61DB9FD0B /* Pods-RikuQuizApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -315,7 +433,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.techacademy.masaya.nakakuki.RikuQuizApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
