@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4000B87227AE6CFB00BEC3C4 /* incorrect.png in Resources */ = {isa = PBXBuildFile; fileRef = 4000B87027AE6CFB00BEC3C4 /* incorrect.png */; };
+		4000B87927AE70FE00BEC3C4 /* correct.png in Resources */ = {isa = PBXBuildFile; fileRef = 4000B87827AE70FE00BEC3C4 /* correct.png */; };
 		401D3A612783138A00178703 /* levelOne.csv in Resources */ = {isa = PBXBuildFile; fileRef = 401D3A602783138A00178703 /* levelOne.csv */; };
 		401D3A632783139B00178703 /* levelThree.csv in Resources */ = {isa = PBXBuildFile; fileRef = 401D3A622783139B00178703 /* levelThree.csv */; };
 		401D3A6527831B0A00178703 /* QuizScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401D3A6427831B0A00178703 /* QuizScreenViewController.swift */; };
 		4033487A278C668900FF052F /* UIColor+ShadowColorRed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40334879278C668900FF052F /* UIColor+ShadowColorRed.swift */; };
 		4033487C278C66B400FF052F /* PressableMaterialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4033487B278C66B400FF052F /* PressableMaterialButton.swift */; };
+		4061844827AAAA4E0060B76F /* backImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 4061844727AAAA4D0060B76F /* backImage.png */; };
 		407B72A0278DAF6C00F7AB05 /* levelFour.csv in Resources */ = {isa = PBXBuildFile; fileRef = 407B729F278DAF6C00F7AB05 /* levelFour.csv */; };
 		407B72A2278DAF7D00F7AB05 /* levelFive.csv in Resources */ = {isa = PBXBuildFile; fileRef = 407B72A1278DAF7D00F7AB05 /* levelFive.csv */; };
 		408664DC27919BCE00588AE7 /* SavedAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408664DB27919BCE00588AE7 /* SavedAnswer.swift */; };
@@ -23,18 +26,20 @@
 		4097451C27812AC1007EE736 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4097451A27812AC1007EE736 /* LaunchScreen.storyboard */; };
 		4097452627812C75007EE736 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4097452527812C75007EE736 /* ScoreViewController.swift */; };
 		4097452827812E77007EE736 /* levelTwo.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4097452727812E77007EE736 /* levelTwo.csv */; };
-		4097452B27813978007EE736 /* correct.png in Resources */ = {isa = PBXBuildFile; fileRef = 4097452927813978007EE736 /* correct.png */; };
-		4097452C27813978007EE736 /* incorrect.png in Resources */ = {isa = PBXBuildFile; fileRef = 4097452A27813978007EE736 /* incorrect.png */; };
+		4098552027AF704000BB10DD /* finish.png in Resources */ = {isa = PBXBuildFile; fileRef = 4098551F27AF704000BB10DD /* finish.png */; };
 		D9045FE0DB67B15027835FF9 /* Pods_RikuQuizApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 585525A99D33CF79298B75B6 /* Pods_RikuQuizApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2535B4AB0E984A27B42FFB95 /* Pods-RikuQuizApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RikuQuizApp.debug.xcconfig"; path = "Target Support Files/Pods-RikuQuizApp/Pods-RikuQuizApp.debug.xcconfig"; sourceTree = "<group>"; };
+		4000B87027AE6CFB00BEC3C4 /* incorrect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = incorrect.png; sourceTree = "<group>"; };
+		4000B87827AE70FE00BEC3C4 /* correct.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = correct.png; sourceTree = "<group>"; };
 		401D3A602783138A00178703 /* levelOne.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = levelOne.csv; sourceTree = "<group>"; };
 		401D3A622783139B00178703 /* levelThree.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = levelThree.csv; sourceTree = "<group>"; };
 		401D3A6427831B0A00178703 /* QuizScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizScreenViewController.swift; sourceTree = "<group>"; };
 		40334879278C668900FF052F /* UIColor+ShadowColorRed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+ShadowColorRed.swift"; sourceTree = "<group>"; };
 		4033487B278C66B400FF052F /* PressableMaterialButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressableMaterialButton.swift; sourceTree = "<group>"; };
+		4061844727AAAA4D0060B76F /* backImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backImage.png; sourceTree = "<group>"; };
 		407B729F278DAF6C00F7AB05 /* levelFour.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = levelFour.csv; sourceTree = "<group>"; };
 		407B72A1278DAF7D00F7AB05 /* levelFive.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = levelFive.csv; sourceTree = "<group>"; };
 		408664DB27919BCE00588AE7 /* SavedAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedAnswer.swift; sourceTree = "<group>"; };
@@ -48,8 +53,7 @@
 		4097451D27812AC1007EE736 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4097452527812C75007EE736 /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 		4097452727812E77007EE736 /* levelTwo.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = levelTwo.csv; sourceTree = "<group>"; };
-		4097452927813978007EE736 /* correct.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = correct.png; sourceTree = "<group>"; };
-		4097452A27813978007EE736 /* incorrect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = incorrect.png; sourceTree = "<group>"; };
+		4098551F27AF704000BB10DD /* finish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = finish.png; sourceTree = "<group>"; };
 		585525A99D33CF79298B75B6 /* Pods_RikuQuizApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RikuQuizApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8F831D9D1D1EBE61DB9FD0B /* Pods-RikuQuizApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RikuQuizApp.release.xcconfig"; path = "Target Support Files/Pods-RikuQuizApp/Pods-RikuQuizApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,8 +105,10 @@
 				407B729F278DAF6C00F7AB05 /* levelFour.csv */,
 				407B72A1278DAF7D00F7AB05 /* levelFive.csv */,
 				4097451527812AB6007EE736 /* Main.storyboard */,
-				4097452927813978007EE736 /* correct.png */,
-				4097452A27813978007EE736 /* incorrect.png */,
+				4061844727AAAA4D0060B76F /* backImage.png */,
+				4000B87827AE70FE00BEC3C4 /* correct.png */,
+				4000B87027AE6CFB00BEC3C4 /* incorrect.png */,
+				4098551F27AF704000BB10DD /* finish.png */,
 				4097451827812AC1007EE736 /* Assets.xcassets */,
 				4097451A27812AC1007EE736 /* LaunchScreen.storyboard */,
 				4097451D27812AC1007EE736 /* Info.plist */,
@@ -188,14 +194,16 @@
 			files = (
 				401D3A612783138A00178703 /* levelOne.csv in Resources */,
 				401D3A632783139B00178703 /* levelThree.csv in Resources */,
-				4097452B27813978007EE736 /* correct.png in Resources */,
-				4097452C27813978007EE736 /* incorrect.png in Resources */,
+				4061844827AAAA4E0060B76F /* backImage.png in Resources */,
 				4097451C27812AC1007EE736 /* LaunchScreen.storyboard in Resources */,
 				4097451927812AC1007EE736 /* Assets.xcassets in Resources */,
+				4000B87227AE6CFB00BEC3C4 /* incorrect.png in Resources */,
 				4097451727812AB6007EE736 /* Main.storyboard in Resources */,
 				407B72A2278DAF7D00F7AB05 /* levelFive.csv in Resources */,
 				407B72A0278DAF6C00F7AB05 /* levelFour.csv in Resources */,
 				4097452827812E77007EE736 /* levelTwo.csv in Resources */,
+				4098552027AF704000BB10DD /* finish.png in Resources */,
+				4000B87927AE70FE00BEC3C4 /* correct.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,6 +414,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L6Q3MJXV23;
 				INFOPLIST_FILE = RikuQuizApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -426,6 +435,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L6Q3MJXV23;
 				INFOPLIST_FILE = RikuQuizApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

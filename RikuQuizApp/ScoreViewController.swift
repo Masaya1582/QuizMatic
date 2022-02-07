@@ -6,28 +6,34 @@
 //
 
 import UIKit
+import PKHUD
 
 class ScoreViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
     
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var resultImage: UIImageView!
     @IBOutlet var changeColorButton: [UIButton] = []
     
     var correct = 0
     var resultWord = [SavedAnswer]()
-    //var resultImage: [UIImage] = []
     var finalResultLevel = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if correct >= 15{
-            commentLabel.text = "You are Brilliant!!!"
-        }else if correct >= 10{
-            commentLabel.text = "You are doing good!!"
+        self.overrideUserInterfaceStyle = .light
+        
+        if correct >= 18{
+            commentLabel.text = "You're genius!"
+            resultImage.image = UIImage(named: "")
+        }else if correct >= 15{
+            commentLabel.text = "Try one more time!"
+            resultImage.image = UIImage(named: "")
         }else{
-            commentLabel.text = "You need to practice more!"
+            commentLabel.text = "Practice Everyday!"
+            resultImage.image = UIImage(named: "")
         }
         scoreLabel.text = "正解数:\(correct)問"
         
@@ -60,6 +66,7 @@ class ScoreViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     
     @IBAction func toTopButtonAction(_ sender: Any) {
+        HUD.flash(.success, delay: 1.0)
         self.presentingViewController?.presentingViewController?.dismiss(animated: true)
     }
     

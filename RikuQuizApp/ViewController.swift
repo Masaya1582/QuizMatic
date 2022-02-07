@@ -14,29 +14,27 @@ class ViewController: UIViewController {
     @IBOutlet weak var levelThreeButton: UIButton!
     @IBOutlet weak var levelFourButton: UIButton!
     @IBOutlet weak var levelFiveButton: UIButton!
+    @IBOutlet weak var firstImage: UIImageView!
     
     var selectedLevel = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        firstImage.image = UIImage(named: "study")
         levelOneButton.layer.cornerRadius = 20.0
         levelTwoButton.layer.cornerRadius = 20.0
         levelThreeButton.layer.cornerRadius = 20.0
         levelFourButton.layer.cornerRadius = 20.0
         levelFiveButton.layer.cornerRadius = 20.0
-    
     }
     
     @IBAction func levelSelectButton(_ sender: UIButton) {
         selectedLevel = sender.tag
-    
         performSegue(withIdentifier: "nextQuiz", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let quizScreenViewController:QuizScreenViewController = segue.destination as! QuizScreenViewController
-        quizScreenViewController.chosenLevel = selectedLevel
+        let quizScreenVC:QuizScreenViewController = segue.destination as! QuizScreenViewController
+        quizScreenVC.chosenLevel = selectedLevel
 }
-
 }
