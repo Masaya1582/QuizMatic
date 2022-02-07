@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        firstImage.image = UIImage(named: "study")
+
         levelOneButton.layer.cornerRadius = 20.0
         levelTwoButton.layer.cornerRadius = 20.0
         levelThreeButton.layer.cornerRadius = 20.0

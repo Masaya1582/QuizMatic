@@ -29,7 +29,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="47" translatesAutoresizingMaskIntoConstraints="NO" id="giC-lT-dzs">
                                 <rect key="frame" x="30" y="202" width="315" height="398"/>
                                 <subviews>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hv7-9S-wNq" customClass="PressableMaterialButton" customModule="RikuQuizApp" customModuleProvider="target">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hv7-9S-wNq">
                                         <rect key="frame" x="0.0" y="0.0" width="315" height="42"/>
                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -40,7 +40,7 @@
                                             <action selector="levelSelectButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yyI-u5-o0e"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sz3-th-PCq" customClass="PressableMaterialButton" customModule="RikuQuizApp" customModuleProvider="target">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sz3-th-PCq">
                                         <rect key="frame" x="0.0" y="89" width="315" height="42"/>
                                         <color key="backgroundColor" systemColor="systemTealColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -51,7 +51,7 @@
                                             <action selector="levelSelectButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vLO-d2-oCS"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQH-U6-opF" customClass="PressableMaterialButton" customModule="RikuQuizApp" customModuleProvider="target">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQH-U6-opF">
                                         <rect key="frame" x="0.0" y="178" width="315" height="42"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -62,7 +62,7 @@
                                             <action selector="levelSelectButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gyb-mE-znP"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fms-HU-T9T" customClass="PressableMaterialButton" customModule="RikuQuizApp" customModuleProvider="target">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fms-HU-T9T">
                                         <rect key="frame" x="0.0" y="267" width="315" height="42"/>
                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -73,7 +73,7 @@
                                             <action selector="levelSelectButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d23-Em-j2v"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zuH-7x-hnS" customClass="PressableMaterialButton" customModule="RikuQuizApp" customModuleProvider="target">
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zuH-7x-hnS">
                                         <rect key="frame" x="0.0" y="356" width="315" height="42"/>
                                         <color key="backgroundColor" systemColor="systemRedColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -219,6 +219,15 @@
                                     <action selector="quitButton:" destination="dGm-cx-lzK" eventType="touchUpInside" id="cya-5l-Eih"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Hp-1P-9Ht">
+                                <rect key="frame" x="90" y="583" width="255" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Ja7-UD-CiE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="D64-hG-ycm"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -233,14 +242,18 @@
                             <constraint firstItem="mXD-pG-ROI" firstAttribute="leading" secondItem="D64-hG-ycm" secondAttribute="leading" constant="10" id="Yed-4F-vgh"/>
                             <constraint firstItem="D64-hG-ycm" firstAttribute="trailing" secondItem="fxQ-F0-QOy" secondAttribute="trailing" constant="30" id="h5o-7y-gXE"/>
                             <constraint firstItem="oPg-D2-7Pj" firstAttribute="leading" secondItem="D64-hG-ycm" secondAttribute="leading" constant="20" id="hxa-TD-GZD"/>
+                            <constraint firstItem="4Hp-1P-9Ht" firstAttribute="leading" secondItem="LwN-MS-U4z" secondAttribute="trailing" constant="10" id="jcY-aj-FVk"/>
                             <constraint firstItem="mXD-pG-ROI" firstAttribute="top" secondItem="oPg-D2-7Pj" secondAttribute="bottom" constant="50" id="miC-ds-76r"/>
+                            <constraint firstItem="D64-hG-ycm" firstAttribute="trailing" secondItem="4Hp-1P-9Ht" secondAttribute="trailing" constant="30" id="oHk-Ps-Wgd"/>
                             <constraint firstItem="KQs-Lv-1G3" firstAttribute="top" secondItem="oPg-D2-7Pj" secondAttribute="bottom" constant="50" id="q5U-2Y-CXl"/>
+                            <constraint firstItem="4Hp-1P-9Ht" firstAttribute="top" secondItem="fxQ-F0-QOy" secondAttribute="bottom" constant="25" id="rlD-31-A3j"/>
                             <constraint firstItem="D64-hG-ycm" firstAttribute="trailing" secondItem="mXD-pG-ROI" secondAttribute="trailing" constant="10" id="t9S-4d-cjp"/>
                             <constraint firstItem="oPg-D2-7Pj" firstAttribute="top" secondItem="D64-hG-ycm" secondAttribute="top" constant="20" id="ywX-O1-31t"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="back" destination="LwN-MS-U4z" id="Vjh-al-AF2"/>
+                        <outlet property="correctLabel" destination="4Hp-1P-9Ht" id="jPv-LK-czS"/>
                         <outlet property="judgeImageView" destination="KQs-Lv-1G3" id="trY-Ms-1t3"/>
                         <outlet property="quizNumberLabel" destination="oPg-D2-7Pj" id="ud5-CT-Bhy"/>
                         <outlet property="quizTextView" destination="mXD-pG-ROI" id="mjE-NO-9Mc"/>
@@ -275,7 +288,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGh-xS-GKr" customClass="PressableMaterialButton" customModule="RikuQuizApp" customModuleProvider="target">
-                                <rect key="frame" x="100" y="479" width="175" height="40"/>
+                                <rect key="frame" x="100" y="478" width="175" height="40"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="KYA-Ue-hf2"/>
@@ -289,7 +302,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今回学んだ単語" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="URq-1e-mY5">
-                                <rect key="frame" x="20" y="136" width="335" height="40"/>
+                                <rect key="frame" x="20" y="135" width="335" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="NBH-oF-Zkz"/>
                                 </constraints>
@@ -298,7 +311,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OBz-eC-CJ7">
-                                <rect key="frame" x="0.0" y="194" width="375" height="250"/>
+                                <rect key="frame" x="0.0" y="193" width="375" height="250"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="2cn-pS-WS9"/>
@@ -320,8 +333,15 @@
                                     <outlet property="delegate" destination="G9s-31-89O" id="w8F-Q4-oZD"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dq1-VD-4Xo">
+                                <rect key="frame" x="20" y="88" width="335" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="beN-Ai-Wdh" customClass="PressableMaterialButton" customModule="RikuQuizApp" customModuleProvider="target">
-                                <rect key="frame" x="91" y="574" width="193" height="52"/>
+                                <rect key="frame" x="91" y="548" width="193" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -332,24 +352,13 @@
                                     <action selector="toTopButtonAction:" destination="G9s-31-89O" eventType="touchUpInside" id="fbR-3T-LJH"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lso-de-YDn">
-                                <rect key="frame" x="91" y="83" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dq1-VD-4Xo">
-                                <rect key="frame" x="149" y="88" width="152" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Cux-3B-ck5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="beN-Ai-Wdh" firstAttribute="top" secondItem="cGh-xS-GKr" secondAttribute="bottom" constant="30" id="1ga-SY-E01"/>
                             <constraint firstItem="URq-1e-mY5" firstAttribute="leading" secondItem="Cux-3B-ck5" secondAttribute="leading" constant="20" id="2Lt-57-JaH"/>
                             <constraint firstItem="Cux-3B-ck5" firstAttribute="trailing" secondItem="Q2y-ga-J4m" secondAttribute="trailing" constant="20" id="8cj-R3-1pX"/>
-                            <constraint firstItem="beN-Ai-Wdh" firstAttribute="top" secondItem="cGh-xS-GKr" secondAttribute="bottom" constant="55" id="Hne-0E-lgR"/>
                             <constraint firstItem="Q2y-ga-J4m" firstAttribute="top" secondItem="Cux-3B-ck5" secondAttribute="top" constant="20" id="J61-Re-dmT"/>
                             <constraint firstItem="OBz-eC-CJ7" firstAttribute="trailing" secondItem="Cux-3B-ck5" secondAttribute="trailing" id="NaL-ET-Yuj"/>
                             <constraint firstItem="cGh-xS-GKr" firstAttribute="top" secondItem="OBz-eC-CJ7" secondAttribute="bottom" constant="35" id="ODX-bi-z0Z"/>
@@ -363,7 +372,6 @@
                     </view>
                     <connections>
                         <outlet property="commentLabel" destination="dq1-VD-4Xo" id="dbt-b1-Bft"/>
-                        <outlet property="resultImage" destination="Lso-de-YDn" id="us6-dg-vcb"/>
                         <outlet property="scoreLabel" destination="Q2y-ga-J4m" id="RkW-eS-2Vi"/>
                         <outlet property="tableView" destination="OBz-eC-CJ7" id="9Zt-x4-78Z"/>
                         <outletCollection property="changeColorButton" destination="cGh-xS-GKr" collectionClass="NSMutableArray" id="2Cr-2r-umr"/>

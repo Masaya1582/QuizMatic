@@ -15,6 +15,8 @@ class QuizScreenViewController: UIViewController{
     @IBOutlet weak var judgeImageView: UIImageView!
     @IBOutlet var answerButton: [UIButton] = []
     @IBOutlet weak var back: UIButton!
+    @IBOutlet weak var correctLabel: UILabel!
+    
     
     var csvArray: [String] = []
     var quizArray: [String] = []
@@ -30,6 +32,7 @@ class QuizScreenViewController: UIViewController{
         super.viewDidLoad()
         
         self.overrideUserInterfaceStyle = .light
+        correctLabel.isHidden = true
         
         switch chosenLevel {
         case 1:
@@ -88,9 +91,12 @@ class QuizScreenViewController: UIViewController{
             judgeImageView.isHidden = false
         }else{
             print("不正解")
+            correctLabel.isHidden = false
+            correctLabel.text = "Correct Answer: \(quizArray[Int(quizArray[1])! + 1])"
             judgeImageView.image = UIImage(named: "incorrect")
             judgeImageView.isHidden = false
         }
+        
         
         back.isEnabled = false
 
@@ -156,13 +162,15 @@ class QuizScreenViewController: UIViewController{
             resetButton()
         }else{
             self.quizNumberLabel.textColor = .red
-            self.quizNumberLabel.font = UIFont(name: "HiraKakuProN-W3", size: 45)
+            self.quizNumberLabel.font = UIFont(name: "HiraKakuProN-W3", size: 40)
             self.quizNumberLabel.text = "Finish!"
             self.judgeImageView.image = UIImage(named: "finish")
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
                 self.performSegue(withIdentifier: "toScoreVC", sender: nil)
             }
         }
+        
+        correctLabel.isHidden = true
         
     }
     
