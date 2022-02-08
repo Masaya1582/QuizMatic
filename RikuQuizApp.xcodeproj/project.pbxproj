@@ -70,6 +70,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		405506C427B2976D00D665EF /* CSV */ = {
+			isa = PBXGroup;
+			children = (
+				401D3A602783138A00178703 /* levelOne.csv */,
+				4097452727812E77007EE736 /* levelTwo.csv */,
+				401D3A622783139B00178703 /* levelThree.csv */,
+				407B729F278DAF6C00F7AB05 /* levelFour.csv */,
+				407B72A1278DAF7D00F7AB05 /* levelFive.csv */,
+			);
+			path = CSV;
+			sourceTree = "<group>";
+		};
 		4097450327812AB5007EE736 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +103,7 @@
 		4097450E27812AB6007EE736 /* RikuQuizApp */ = {
 			isa = PBXGroup;
 			children = (
+				405506C427B2976D00D665EF /* CSV */,
 				4097450F27812AB6007EE736 /* AppDelegate.swift */,
 				4097451127812AB6007EE736 /* SceneDelegate.swift */,
 				4097451327812AB6007EE736 /* ViewController.swift */,
@@ -99,11 +112,6 @@
 				408664DB27919BCE00588AE7 /* SavedAnswer.swift */,
 				4033487B278C66B400FF052F /* PressableMaterialButton.swift */,
 				40334879278C668900FF052F /* UIColor+ShadowColorRed.swift */,
-				401D3A602783138A00178703 /* levelOne.csv */,
-				4097452727812E77007EE736 /* levelTwo.csv */,
-				401D3A622783139B00178703 /* levelThree.csv */,
-				407B729F278DAF6C00F7AB05 /* levelFour.csv */,
-				407B72A1278DAF7D00F7AB05 /* levelFive.csv */,
 				4097451527812AB6007EE736 /* Main.storyboard */,
 				4061844727AAAA4D0060B76F /* backImage.png */,
 				4000B87827AE70FE00BEC3C4 /* correct.png */,

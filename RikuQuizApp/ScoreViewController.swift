@@ -27,15 +27,15 @@ class ScoreViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         
         if correct >= 18{
             commentLabel.text = "You're genius!"
-            resultImage.image = UIImage(named: "")
+            
         }else if correct >= 15{
             commentLabel.text = "Try one more time!"
-            resultImage.image = UIImage(named: "")
+            
         }else{
             commentLabel.text = "Practice Everyday!"
-            resultImage.image = UIImage(named: "")
+            
         }
-        scoreLabel.text = "正解数:\(correct)問"
+        scoreLabel.text = "Correct Answers:\(correct)"
         
         for button in changeColorButton{
             button.layer.cornerRadius = 20.0
@@ -59,7 +59,7 @@ class ScoreViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     
     @IBAction func shareButtonAction(_ sender: Any) {
-        let activityItems = ["\(correct)問正解しました。","#クイズアプリ"]
+        let activityItems = ["I got \(correct) correct answer","#En-En Quiz"]
         let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
         self.present(activityVC, animated: true)
     }

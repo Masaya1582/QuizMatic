@@ -50,7 +50,7 @@ class QuizScreenViewController: UIViewController{
         }
         
         quizArray = csvArray[quizCount].components(separatedBy: ",")
-        quizNumberLabel.text = "第\(quizCount + 1)問"
+        quizNumberLabel.text = "Question\(quizCount + 1)"
         quizTextView.text = quizArray[0]
         resetButton()
         csvArray.shuffle()
@@ -91,14 +91,13 @@ class QuizScreenViewController: UIViewController{
             judgeImageView.isHidden = false
         }else{
             print("不正解")
-            correctLabel.isHidden = false
-            correctLabel.text = "Correct Answer: \(quizArray[Int(quizArray[1])! + 1])"
             judgeImageView.image = UIImage(named: "incorrect")
             judgeImageView.isHidden = false
         }
         
-        
-        back.isEnabled = false
+        back.isHidden = true
+        correctLabel.isHidden = false
+        correctLabel.text = "Correct Answer: \(quizArray[Int(quizArray[1])! + 1])"
 
         let correctAnswerWord = quizArray[Int(quizArray[1])! + 1]
         let answeredWord = quizArray[sender.tag + 1]
@@ -109,6 +108,16 @@ class QuizScreenViewController: UIViewController{
             let answerResult = SavedAnswer(result: false, correctAnswerWord: correctAnswerWord, answeredWord: answeredWord)
             resultArray.append(answerResult)
         }
+        
+        let answerResult = SavedAnswer(result: correctAnswerWord == answeredWord ? true : false, correctAnswerWord: correctAnswerWord, answeredWord: answeredWord)
+        resultArray.append(answerResult)
+        
+        
+        
+        
+        
+        
+        
         print(resultArray)
         
         print("スコア: \(correctCount)")
@@ -118,14 +127,14 @@ class QuizScreenViewController: UIViewController{
         }
         
         //アニメーションを追加
-        animator = UIViewPropertyAnimator(duration: 1.0,curve: .easeInOut){
+        animator = UIViewPropertyAnimator(duration: 1.0,curve: .easeInOut) {
             self.judgeImageView.center.y += 600
             self.judgeImageView.alpha = 0.8
         }
         
         animator.startAnimation()
     
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
             self.judgeImageView.isHidden = true
             //アニメーションを元の位置に戻す?
             
@@ -141,7 +150,7 @@ class QuizScreenViewController: UIViewController{
         super.didReceiveMemoryWarning()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let scoreVC = segue.destination as! ScoreViewController
         scoreVC.correct = correctCount
         scoreVC.resultWord = resultArray
@@ -153,7 +162,7 @@ class QuizScreenViewController: UIViewController{
         quizCount += 1
         if quizCount < csvArray.count{
             quizArray = csvArray[quizCount].components(separatedBy: ",")
-            quizNumberLabel.text = "第\(quizCount + 1)問"
+            quizNumberLabel.text = "Question\(quizCount + 1)"
             quizTextView.text = quizArray[0]
             judgeImageView.isHidden = true
             for button in self.answerButton{
@@ -170,26 +179,25 @@ class QuizScreenViewController: UIViewController{
             }
         }
         
+        back.isHidden = false
         correctLabel.isHidden = true
         
     }
     
     @IBAction func quitButton(_ sender: Any) {
-        let alert = UIAlertController(title: "Quit", message: "レベル選択画面に戻りますか？", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Quit", message: "Back to top screen?", preferredStyle: .alert)
         
         let backToTop = UIAlertAction(title: "Yes", style: .default, handler: { (action) -> Void in
             self.dismiss(animated: true, completion: nil)
             print("Yes button tapped")
         })
         
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) -> Void in
-            print("Cancel button tapped")
-        })
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
         
         alert.addAction(backToTop)
         alert.addAction(cancel)
         
-        self.present(alert, animated: true, completion: nil)
+        self.present(alert, animated: true)
     }
     
     func loadCSV(fileName: String) -> [String]{
