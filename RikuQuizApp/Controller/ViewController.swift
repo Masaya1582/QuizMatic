@@ -21,11 +21,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        levelOneButton.layer.cornerRadius = 20.0
-        levelTwoButton.layer.cornerRadius = 20.0
-        levelThreeButton.layer.cornerRadius = 20.0
-        levelFourButton.layer.cornerRadius = 20.0
-        levelFiveButton.layer.cornerRadius = 20.0
+        setUpView()
+        
     }
     
     @IBAction func levelSelectButton(_ sender: UIButton) {
@@ -37,4 +34,13 @@ class ViewController: UIViewController {
         let quizScreenVC:QuizScreenViewController = segue.destination as! QuizScreenViewController
         quizScreenVC.chosenLevel = selectedLevel
 }
+    
+    private func setUpView() {
+        levelOneButton.layer.cornerRadius = 20.0
+        levelTwoButton.layer.cornerRadius = 20.0
+        levelThreeButton.layer.cornerRadius = 20.0
+        levelFourButton.layer.cornerRadius = 20.0
+        levelFiveButton.layer.cornerRadius = 20.0
+    }
+    
 }

@@ -22,38 +22,8 @@ class ScoreViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.overrideUserInterfaceStyle = .light
-        
-        if correct >= 18{
-            commentLabel.text = "You're genius!"
-            
-        }else if correct >= 15{
-            commentLabel.text = "Try one more time!"
-            
-        }else{
-            commentLabel.text = "Practice Everyday!"
-            
-        }
-        scoreLabel.text = "Correct Answers:\(correct)"
-        
-        for button in changeColorButton{
-            button.layer.cornerRadius = 20.0
-            switch finalResultLevel {
-            case 1:
-                button.backgroundColor = .systemYellow
-            case 2:
-                button.backgroundColor = .systemTeal
-            case 3:
-                button.backgroundColor = .systemGreen
-            case 4:
-                button.backgroundColor = .systemPurple
-            case 5:
-                button.backgroundColor = .systemRed
-            default:
-                print("Error")
-            }
-        }
+       
+        setupResultView()
         
     }
     
@@ -86,5 +56,39 @@ class ScoreViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         }
         //cell.imageView!.image = resultImage[indexPath.row]
         return cell
+    }
+    
+    func setupResultView() {
+        self.overrideUserInterfaceStyle = .light
+        
+        if correct >= 18{
+            commentLabel.text = "You're genius!"
+            
+        }else if correct >= 15{
+            commentLabel.text = "Try one more time!"
+            
+        }else{
+            commentLabel.text = "Practice Everyday!"
+            
+        }
+        scoreLabel.text = "Correct Answers:\(correct)"
+        
+        for button in changeColorButton{
+            button.layer.cornerRadius = 20.0
+            switch finalResultLevel {
+            case 1:
+                button.backgroundColor = .systemYellow
+            case 2:
+                button.backgroundColor = .systemTeal
+            case 3:
+                button.backgroundColor = .systemGreen
+            case 4:
+                button.backgroundColor = .systemPurple
+            case 5:
+                button.backgroundColor = .systemRed
+            default:
+                print("Error")
+            }
+        }
     }
 }

@@ -31,30 +31,8 @@ class QuizScreenViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.overrideUserInterfaceStyle = .light
-        correctLabel.isHidden = true
+        setupView()
         
-        switch chosenLevel {
-        case 1:
-            csvArray = loadCSV(fileName: "levelOne")
-        case 2:
-            csvArray = loadCSV(fileName: "levelTwo")
-        case 3:
-            csvArray = loadCSV(fileName: "levelThree")
-        case 4:
-            csvArray = loadCSV(fileName: "levelFour")
-        case 5:
-            csvArray = loadCSV(fileName: "levelFive")
-        default:
-            print("ERROR")
-        }
-        
-        quizArray = csvArray[quizCount].components(separatedBy: ",")
-        quizNumberLabel.text = "Question\(quizCount + 1)"
-        quizTextView.text = quizArray[0]
-        resetButton()
-        csvArray.shuffle()
-        print(csvArray)
     }
     
     private func resetButton() {
@@ -101,22 +79,16 @@ class QuizScreenViewController: UIViewController{
 
         let correctAnswerWord = quizArray[Int(quizArray[1])! + 1]
         let answeredWord = quizArray[sender.tag + 1]
-        if correctAnswerWord == answeredWord{
-            let answerResult = SavedAnswer(result: true, correctAnswerWord: correctAnswerWord, answeredWord: answeredWord)
-            resultArray.append(answerResult)
-        }else{
-            let answerResult = SavedAnswer(result: false, correctAnswerWord: correctAnswerWord, answeredWord: answeredWord)
-            resultArray.append(answerResult)
-        }
+//        if correctAnswerWord == answeredWord{
+//            let answerResult = SavedAnswer(result: true, correctAnswerWord: correctAnswerWord, answeredWord: answeredWord)
+//            resultArray.append(answerResult)
+//        }else{
+//            let answerResult = SavedAnswer(result: false, correctAnswerWord: correctAnswerWord, answeredWord: answeredWord)
+//            resultArray.append(answerResult)
+//        }
         
         let answerResult = SavedAnswer(result: correctAnswerWord == answeredWord ? true : false, correctAnswerWord: correctAnswerWord, answeredWord: answeredWord)
         resultArray.append(answerResult)
-        
-        
-        
-        
-        
-        
         
         print(resultArray)
         
@@ -211,5 +183,32 @@ class QuizScreenViewController: UIViewController{
             print("エラー")
         }
         return csvArray
+    }
+    
+    func setupView() {
+        self.overrideUserInterfaceStyle = .light
+        correctLabel.isHidden = true
+        
+        switch chosenLevel {
+        case 1:
+            csvArray = loadCSV(fileName: "levelOne")
+        case 2:
+            csvArray = loadCSV(fileName: "levelTwo")
+        case 3:
+            csvArray = loadCSV(fileName: "levelThree")
+        case 4:
+            csvArray = loadCSV(fileName: "levelFour")
+        case 5:
+            csvArray = loadCSV(fileName: "levelFive")
+        default:
+            print("ERROR")
+        }
+        
+        quizArray = csvArray[quizCount].components(separatedBy: ",")
+        quizNumberLabel.text = "Question\(quizCount + 1)"
+        quizTextView.text = quizArray[0]
+        resetButton()
+        csvArray.shuffle()
+        print(csvArray)
     }
 }

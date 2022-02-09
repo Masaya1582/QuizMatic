@@ -82,6 +82,62 @@
 			path = CSV;
 			sourceTree = "<group>";
 		};
+		408F068227B3EAD00096CFAF /* Button Animation */ = {
+			isa = PBXGroup;
+			children = (
+				4033487B278C66B400FF052F /* PressableMaterialButton.swift */,
+				40334879278C668900FF052F /* UIColor+ShadowColorRed.swift */,
+			);
+			path = "Button Animation";
+			sourceTree = "<group>";
+		};
+		408F068327B3EAEE0096CFAF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4097451327812AB6007EE736 /* ViewController.swift */,
+				401D3A6427831B0A00178703 /* QuizScreenViewController.swift */,
+				4097452527812C75007EE736 /* ScoreViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		408F068427B3EB090096CFAF /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				408664DB27919BCE00588AE7 /* SavedAnswer.swift */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		408F068527B3EB240096CFAF /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				4097451827812AC1007EE736 /* Assets.xcassets */,
+				4061844727AAAA4D0060B76F /* backImage.png */,
+				4000B87827AE70FE00BEC3C4 /* correct.png */,
+				4000B87027AE6CFB00BEC3C4 /* incorrect.png */,
+				4098551F27AF704000BB10DD /* finish.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		408F068627B3EB360096CFAF /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				4097451527812AB6007EE736 /* Main.storyboard */,
+				4097451A27812AC1007EE736 /* LaunchScreen.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		408F068727B3EC120096CFAF /* Info.plist */ = {
+			isa = PBXGroup;
+			children = (
+				4097451D27812AC1007EE736 /* Info.plist */,
+			);
+			path = Info.plist;
+			sourceTree = "<group>";
+		};
 		4097450327812AB5007EE736 = {
 			isa = PBXGroup;
 			children = (
@@ -103,23 +159,15 @@
 		4097450E27812AB6007EE736 /* RikuQuizApp */ = {
 			isa = PBXGroup;
 			children = (
-				405506C427B2976D00D665EF /* CSV */,
 				4097450F27812AB6007EE736 /* AppDelegate.swift */,
 				4097451127812AB6007EE736 /* SceneDelegate.swift */,
-				4097451327812AB6007EE736 /* ViewController.swift */,
-				401D3A6427831B0A00178703 /* QuizScreenViewController.swift */,
-				4097452527812C75007EE736 /* ScoreViewController.swift */,
-				408664DB27919BCE00588AE7 /* SavedAnswer.swift */,
-				4033487B278C66B400FF052F /* PressableMaterialButton.swift */,
-				40334879278C668900FF052F /* UIColor+ShadowColorRed.swift */,
-				4097451527812AB6007EE736 /* Main.storyboard */,
-				4061844727AAAA4D0060B76F /* backImage.png */,
-				4000B87827AE70FE00BEC3C4 /* correct.png */,
-				4000B87027AE6CFB00BEC3C4 /* incorrect.png */,
-				4098551F27AF704000BB10DD /* finish.png */,
-				4097451827812AC1007EE736 /* Assets.xcassets */,
-				4097451A27812AC1007EE736 /* LaunchScreen.storyboard */,
-				4097451D27812AC1007EE736 /* Info.plist */,
+				408F068327B3EAEE0096CFAF /* Controller */,
+				408F068427B3EB090096CFAF /* Class */,
+				408F068627B3EB360096CFAF /* StoryBoard */,
+				408F068227B3EAD00096CFAF /* Button Animation */,
+				405506C427B2976D00D665EF /* CSV */,
+				408F068527B3EB240096CFAF /* Images */,
+				408F068727B3EC120096CFAF /* Info.plist */,
 			);
 			path = RikuQuizApp;
 			sourceTree = "<group>";
