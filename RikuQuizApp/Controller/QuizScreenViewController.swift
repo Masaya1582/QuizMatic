@@ -79,14 +79,7 @@ class QuizScreenViewController: UIViewController{
 
         let correctAnswerWord = quizArray[Int(quizArray[1])! + 1]
         let answeredWord = quizArray[sender.tag + 1]
-//        if correctAnswerWord == answeredWord{
-//            let answerResult = SavedAnswer(result: true, correctAnswerWord: correctAnswerWord, answeredWord: answeredWord)
-//            resultArray.append(answerResult)
-//        }else{
-//            let answerResult = SavedAnswer(result: false, correctAnswerWord: correctAnswerWord, answeredWord: answeredWord)
-//            resultArray.append(answerResult)
-//        }
-        
+
         let answerResult = SavedAnswer(result: correctAnswerWord == answeredWord ? true : false, correctAnswerWord: correctAnswerWord, answeredWord: answeredWord)
         resultArray.append(answerResult)
         

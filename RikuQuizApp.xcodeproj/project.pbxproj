@@ -130,18 +130,11 @@
 			path = StoryBoard;
 			sourceTree = "<group>";
 		};
-		408F068727B3EC120096CFAF /* Info.plist */ = {
-			isa = PBXGroup;
-			children = (
-				4097451D27812AC1007EE736 /* Info.plist */,
-			);
-			path = Info.plist;
-			sourceTree = "<group>";
-		};
 		4097450327812AB5007EE736 = {
 			isa = PBXGroup;
 			children = (
 				4097450E27812AB6007EE736 /* RikuQuizApp */,
+				4097451D27812AC1007EE736 /* Info.plist */,
 				4097450D27812AB5007EE736 /* Products */,
 				C297BC0DEB4DAEDD2BCE45EA /* Pods */,
 				AF655DC1D29632E640FC62AB /* Frameworks */,
@@ -167,7 +160,6 @@
 				408F068227B3EAD00096CFAF /* Button Animation */,
 				405506C427B2976D00D665EF /* CSV */,
 				408F068527B3EB240096CFAF /* Images */,
-				408F068727B3EC120096CFAF /* Info.plist */,
 			);
 			path = RikuQuizApp;
 			sourceTree = "<group>";
@@ -469,7 +461,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L6Q3MJXV23;
-				INFOPLIST_FILE = RikuQuizApp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -490,7 +482,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L6Q3MJXV23;
-				INFOPLIST_FILE = RikuQuizApp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
