@@ -32,14 +32,14 @@ class ViewController: UIViewController {
         levelFiveButton.layer.cornerRadius = 20.0
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let quizScreenVC = segue.destination as! QuizScreenViewController
+        quizScreenVC.chosenLevel = selectedLevel
+    }
+    
     @IBAction func levelSelectButton(_ sender: UIButton) {
         selectedLevel = sender.tag
         performSegue(withIdentifier: "nextQuiz", sender: nil)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let quizScreenVC:QuizScreenViewController = segue.destination as! QuizScreenViewController
-        quizScreenVC.chosenLevel = selectedLevel
     }
     
 }

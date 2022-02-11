@@ -13,7 +13,7 @@ class ScoreViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var resultImage: UIImageView!
+    
     @IBOutlet var changeColorButton: [UIButton] = []
     
     var correct = 0
@@ -25,37 +25,6 @@ class ScoreViewController: UIViewController,UITableViewDelegate,UITableViewDataS
        
         setupResultView()
         
-    }
-    
-    
-    @IBAction func shareButtonAction(_ sender: Any) {
-        let activityItems = ["I got \(correct) correct answer","#En-En Quiz"]
-        let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
-        self.present(activityVC, animated: true)
-    }
-    
-    
-    @IBAction func toTopButtonAction(_ sender: Any) {
-        HUD.flash(.success, delay: 1.0)
-        self.presentingViewController?.presentingViewController?.dismiss(animated: true)
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return resultWord.count
-    }
-    
-    //何匁が正解不正解だったかを表示する
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "correctWords", for: indexPath)
-        cell.textLabel?.text = resultWord[indexPath.row].correctAnswerWord
-        cell.textLabel?.font = UIFont.systemFont(ofSize: 25)
-        if resultWord[indexPath.row].result == true{
-            cell.imageView?.image = UIImage(named: "correct")
-        }else{
-            cell.imageView?.image = UIImage(named: "incorrect")
-        }
-        //cell.imageView!.image = resultImage[indexPath.row]
-        return cell
     }
     
     func setupResultView() {
@@ -91,4 +60,37 @@ class ScoreViewController: UIViewController,UITableViewDelegate,UITableViewDataS
             }
         }
     }
+    
+    
+    @IBAction func shareButtonAction(_ sender: Any) {
+        let activityItems = ["I got \(correct) correct answer","#En-En Quiz"]
+        let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        self.present(activityVC, animated: true)
+    }
+    
+    
+    @IBAction func toTopButtonAction(_ sender: Any) {
+        HUD.flash(.success, delay: 1.0)
+        self.presentingViewController?.presentingViewController?.dismiss(animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return resultWord.count
+    }
+    
+    //何匁が正解不正解だったかを表示する
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "correctWords", for: indexPath)
+        cell.textLabel?.text = resultWord[indexPath.row].correctAnswerWord
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 25)
+        if resultWord[indexPath.row].result == true{
+            cell.imageView?.image = UIImage(named: "correct")
+        }else{
+            cell.imageView?.image = UIImage(named: "incorrect")
+        }
+        //cell.imageView!.image = resultImage[indexPath.row]
+        return cell
+    }
+    
+    
 }

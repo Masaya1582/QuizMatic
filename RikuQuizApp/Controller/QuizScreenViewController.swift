@@ -6,7 +6,7 @@
 //
 
 import UIKit
-//import SRCountdownTimer
+
 
 class QuizScreenViewController: UIViewController{
     
@@ -17,12 +17,10 @@ class QuizScreenViewController: UIViewController{
     @IBOutlet weak var back: UIButton!
     @IBOutlet weak var correctLabel: UILabel!
     
-    
     var csvArray: [String] = []
     var quizArray: [String] = []
     var quizCount = 0
     var correctCount = 0
-    var timerCount = 10
     var chosenLevel = 0
     var resultArray: [SavedAnswer] = []
     var imageArray: [UIImage] = []
@@ -33,6 +31,33 @@ class QuizScreenViewController: UIViewController{
         
         setupView()
         
+    }
+    
+    private func setupView() {
+        self.overrideUserInterfaceStyle = .light
+        correctLabel.isHidden = true
+        
+        switch chosenLevel {
+        case 1:
+            csvArray = loadCSV(fileName: "levelOne")
+        case 2:
+            csvArray = loadCSV(fileName: "levelTwo")
+        case 3:
+            csvArray = loadCSV(fileName: "levelThree")
+        case 4:
+            csvArray = loadCSV(fileName: "levelFour")
+        case 5:
+            csvArray = loadCSV(fileName: "levelFive")
+        default:
+            print("ERROR")
+        }
+        
+        quizArray = csvArray[quizCount].components(separatedBy: ",")
+        quizNumberLabel.text = "Question\(quizCount + 1)"
+        quizTextView.text = quizArray[0]
+        resetButton()
+        csvArray.shuffle()
+        print(csvArray)
     }
     
     private func resetButton() {
@@ -101,7 +126,6 @@ class QuizScreenViewController: UIViewController{
     
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
             self.judgeImageView.isHidden = true
-            //アニメーションを元の位置に戻す?
             
             for button in self.answerButton{
                 button.isEnabled = true
@@ -178,30 +202,5 @@ class QuizScreenViewController: UIViewController{
         return csvArray
     }
     
-    func setupView() {
-        self.overrideUserInterfaceStyle = .light
-        correctLabel.isHidden = true
-        
-        switch chosenLevel {
-        case 1:
-            csvArray = loadCSV(fileName: "levelOne")
-        case 2:
-            csvArray = loadCSV(fileName: "levelTwo")
-        case 3:
-            csvArray = loadCSV(fileName: "levelThree")
-        case 4:
-            csvArray = loadCSV(fileName: "levelFour")
-        case 5:
-            csvArray = loadCSV(fileName: "levelFive")
-        default:
-            print("ERROR")
-        }
-        
-        quizArray = csvArray[quizCount].components(separatedBy: ",")
-        quizNumberLabel.text = "Question\(quizCount + 1)"
-        quizTextView.text = quizArray[0]
-        resetButton()
-        csvArray.shuffle()
-        print(csvArray)
-    }
+   
 }
