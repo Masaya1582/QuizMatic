@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var levelOneButton: UIButton!
     @IBOutlet weak var levelTwoButton: UIButton!
     @IBOutlet weak var levelThreeButton: UIButton!
@@ -25,6 +26,14 @@ class ViewController: UIViewController {
     }
     
     private func setUpView() {
+        
+        titleLabel.backgroundColor = UIColor(hex: "bde0fe", alpha: 1.0)
+        levelOneButton.backgroundColor = UIColor(hex: "ffcb69", alpha: 0.6)
+        levelTwoButton.backgroundColor = UIColor(hex: "4cc9f0", alpha: 0.6)
+        levelThreeButton.backgroundColor = UIColor(hex: "02c39a", alpha: 0.6)
+        levelFourButton.backgroundColor = UIColor(hex: "9d4edd", alpha: 0.6)
+        levelFiveButton.backgroundColor = UIColor(hex: "e5383b", alpha: 0.6)
+        
         levelOneButton.layer.cornerRadius = 20.0
         levelTwoButton.layer.cornerRadius = 20.0
         levelThreeButton.layer.cornerRadius = 20.0

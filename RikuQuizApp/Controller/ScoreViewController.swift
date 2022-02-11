@@ -22,13 +22,15 @@ class ScoreViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         setupResultView()
         
     }
     
     func setupResultView() {
         self.overrideUserInterfaceStyle = .light
+        
+        tableView.register(UINib(nibName: "MainTableViewCell", bundle: nil), forCellReuseIdentifier: "customCell")
         
         if correct >= 18{
             commentLabel.text = "You're genius!"
@@ -78,17 +80,25 @@ class ScoreViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         return resultWord.count
     }
     
-    //何匁が正解不正解だったかを表示する
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "correctWords", for: indexPath)
-        cell.textLabel?.text = resultWord[indexPath.row].correctAnswerWord
-        cell.textLabel?.font = UIFont.systemFont(ofSize: 25)
+        //        let cell = tableView.dequeueReusableCell(withIdentifier: "correctWords", for: indexPath)
+        //        cell.textLabel?.text = resultWord[indexPath.row].correctAnswerWord
+        //        cell.textLabel?.font = UIFont.systemFont(ofSize: 25)
+        //        if resultWord[indexPath.row].result == true{
+        //            cell.imageView?.image = UIImage(named: "correct")
+        //        }else{
+        //            cell.imageView?.image = UIImage(named: "incorrect")
+        //        }
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! MainTableViewCell
         if resultWord[indexPath.row].result == true{
-            cell.imageView?.image = UIImage(named: "correct")
+            cell.kekkaImage.image = UIImage(named: "correct")
         }else{
-            cell.imageView?.image = UIImage(named: "incorrect")
+            cell.kekkaImage.image = UIImage(named: "incorrect")
         }
-        //cell.imageView!.image = resultImage[indexPath.row]
+        cell.seikaiLabel.text = resultWord[indexPath.row].correctAnswerWord
+        cell.seikaiLabel.font = UIFont.systemFont(ofSize: 25)
+        
         return cell
     }
     

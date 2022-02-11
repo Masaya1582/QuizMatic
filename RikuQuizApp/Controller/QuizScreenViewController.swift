@@ -37,6 +37,8 @@ class QuizScreenViewController: UIViewController{
         self.overrideUserInterfaceStyle = .light
         correctLabel.isHidden = true
         
+        
+        
         switch chosenLevel {
         case 1:
             csvArray = loadCSV(fileName: "levelOne")
@@ -66,20 +68,20 @@ class QuizScreenViewController: UIViewController{
             button.setTitle(quizArray[2 + index], for: .normal)
             switch chosenLevel {
             case 1:
-                button.backgroundColor = .systemYellow
-                back.backgroundColor = .systemYellow
+                button.backgroundColor = UIColor(hex: "ffcb69", alpha: 0.8)
+                back.backgroundColor = UIColor(hex: "ffcb69", alpha: 0.8)
             case 2:
-                button.backgroundColor = .systemTeal
-                back.backgroundColor = .systemTeal
+                button.backgroundColor = UIColor(hex: "4cc9f0", alpha: 0.8)
+                back.backgroundColor = UIColor(hex: "4cc9f0", alpha: 0.8)
             case 3:
-                button.backgroundColor = .systemGreen
-                back.backgroundColor = .systemGreen
+                button.backgroundColor = UIColor(hex: "02c39a", alpha: 0.8)
+                back.backgroundColor = UIColor(hex: "02c39a", alpha: 0.8)
             case 4:
-                button.backgroundColor = .systemPurple
-                back.backgroundColor = .systemPurple
+                button.backgroundColor = UIColor(hex: "9d4edd", alpha: 0.8)
+                back.backgroundColor = UIColor(hex: "9d4edd", alpha: 0.8)
             case 5:
-                button.backgroundColor = .systemRed
-                back.backgroundColor = .systemRed
+                button.backgroundColor = UIColor(hex: "e5383b", alpha: 0.8)
+                back.backgroundColor = UIColor(hex: "e5383b", alpha: 0.8)
             default:
                 print("Error")
             }

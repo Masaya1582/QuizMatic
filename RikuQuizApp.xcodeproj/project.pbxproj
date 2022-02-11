@@ -27,6 +27,9 @@
 		4097452627812C75007EE736 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4097452527812C75007EE736 /* ScoreViewController.swift */; };
 		4097452827812E77007EE736 /* levelTwo.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4097452727812E77007EE736 /* levelTwo.csv */; };
 		4098552027AF704000BB10DD /* finish.png in Resources */ = {isa = PBXBuildFile; fileRef = 4098551F27AF704000BB10DD /* finish.png */; };
+		40B09D4C27B69A4400FECE97 /* UIColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B09D4B27B69A4400FECE97 /* UIColorHex.swift */; };
+		40B09D4F27B6A4BB00FECE97 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B09D4D27B6A4BB00FECE97 /* MainTableViewCell.swift */; };
+		40B09D5027B6A4BB00FECE97 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40B09D4E27B6A4BB00FECE97 /* MainTableViewCell.xib */; };
 		D9045FE0DB67B15027835FF9 /* Pods_RikuQuizApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 585525A99D33CF79298B75B6 /* Pods_RikuQuizApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +57,9 @@
 		4097452527812C75007EE736 /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 		4097452727812E77007EE736 /* levelTwo.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = levelTwo.csv; sourceTree = "<group>"; };
 		4098551F27AF704000BB10DD /* finish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = finish.png; sourceTree = "<group>"; };
+		40B09D4B27B69A4400FECE97 /* UIColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorHex.swift; sourceTree = "<group>"; };
+		40B09D4D27B6A4BB00FECE97 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		40B09D4E27B6A4BB00FECE97 /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
 		585525A99D33CF79298B75B6 /* Pods_RikuQuizApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RikuQuizApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8F831D9D1D1EBE61DB9FD0B /* Pods-RikuQuizApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RikuQuizApp.release.xcconfig"; path = "Target Support Files/Pods-RikuQuizApp/Pods-RikuQuizApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,6 +103,8 @@
 				4097451327812AB6007EE736 /* ViewController.swift */,
 				401D3A6427831B0A00178703 /* QuizScreenViewController.swift */,
 				4097452527812C75007EE736 /* ScoreViewController.swift */,
+				40B09D4D27B6A4BB00FECE97 /* MainTableViewCell.swift */,
+				40B09D4E27B6A4BB00FECE97 /* MainTableViewCell.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -104,6 +112,7 @@
 		408F068427B3EB090096CFAF /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				40B09D4B27B69A4400FECE97 /* UIColorHex.swift */,
 				408664DB27919BCE00588AE7 /* SavedAnswer.swift */,
 			);
 			path = Class;
@@ -250,6 +259,7 @@
 				407B72A2278DAF7D00F7AB05 /* levelFive.csv in Resources */,
 				407B72A0278DAF6C00F7AB05 /* levelFour.csv in Resources */,
 				4097452827812E77007EE736 /* levelTwo.csv in Resources */,
+				40B09D5027B6A4BB00FECE97 /* MainTableViewCell.xib in Resources */,
 				4098552027AF704000BB10DD /* finish.png in Resources */,
 				4000B87927AE70FE00BEC3C4 /* correct.png in Resources */,
 			);
@@ -304,9 +314,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40B09D4C27B69A4400FECE97 /* UIColorHex.swift in Sources */,
 				4097451427812AB6007EE736 /* ViewController.swift in Sources */,
 				4097451027812AB6007EE736 /* AppDelegate.swift in Sources */,
 				4097452627812C75007EE736 /* ScoreViewController.swift in Sources */,
+				40B09D4F27B6A4BB00FECE97 /* MainTableViewCell.swift in Sources */,
 				408664DC27919BCE00588AE7 /* SavedAnswer.swift in Sources */,
 				401D3A6527831B0A00178703 /* QuizScreenViewController.swift in Sources */,
 				4097451227812AB6007EE736 /* SceneDelegate.swift in Sources */,
