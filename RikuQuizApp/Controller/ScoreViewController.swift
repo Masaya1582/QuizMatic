@@ -33,22 +33,26 @@ class ScoreViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         tableView.register(UINib(nibName: "MainTableViewCell", bundle: nil), forCellReuseIdentifier: "customCell")
         
         if correct <= 1 {
-            scoreLabel.text = "You got \(correct) correct answer"
+            scoreLabel.text = "\(correct) correct answer"
         }else {
-            scoreLabel.text = "You got \(correct) correct answers"
+            scoreLabel.text = "\(correct) correct answers"
         }
         
         if correct == 20 {
             commentLabel.text = "Perfect!!!"
+            commentLabel.textColor = .red
             
         }else if correct >= 15{
             commentLabel.text = "You're doing great!!"
+            commentLabel.textColor = .red
             
         }else if correct >= 10{
             commentLabel.text = "You can do better!"
+            commentLabel.textColor = .red
 
         }else {
             commentLabel.text = "Try one more time!"
+            commentLabel.textColor = .red
         }
         
         for button in changeColorButton{

@@ -68,20 +68,20 @@ class QuizScreenViewController: UIViewController{
             button.setTitle(quizArray[2 + index], for: .normal)
             switch chosenLevel {
             case 1:
-                button.backgroundColor = UIColor(hex: "ffcb69", alpha: 0.8)
-                back.backgroundColor = UIColor(hex: "ffcb69", alpha: 0.8)
+                button.backgroundColor = UIColor(hex: "ffcb69", alpha: 1.0)
+                back.backgroundColor = UIColor(hex: "ffcb69", alpha: 1.0)
             case 2:
-                button.backgroundColor = UIColor(hex: "4cc9f0", alpha: 0.8)
-                back.backgroundColor = UIColor(hex: "4cc9f0", alpha: 0.8)
+                button.backgroundColor = UIColor(hex: "4cc9f0", alpha: 1.0)
+                back.backgroundColor = UIColor(hex: "4cc9f0", alpha: 1.0)
             case 3:
-                button.backgroundColor = UIColor(hex: "02c39a", alpha: 0.8)
-                back.backgroundColor = UIColor(hex: "02c39a", alpha: 0.8)
+                button.backgroundColor = UIColor(hex: "02c39a", alpha: 1.0)
+                back.backgroundColor = UIColor(hex: "02c39a", alpha: 1.0)
             case 4:
-                button.backgroundColor = UIColor(hex: "9d4edd", alpha: 0.8)
-                back.backgroundColor = UIColor(hex: "9d4edd", alpha: 0.8)
+                button.backgroundColor = UIColor(hex: "9d4edd", alpha: 1.0)
+                back.backgroundColor = UIColor(hex: "9d4edd", alpha: 1.0)
             case 5:
-                button.backgroundColor = UIColor(hex: "e5383b", alpha: 0.8)
-                back.backgroundColor = UIColor(hex: "e5383b", alpha: 0.8)
+                button.backgroundColor = UIColor(hex: "e5383b", alpha: 1.0)
+                back.backgroundColor = UIColor(hex: "e5383b", alpha: 1.0)
             default:
                 print("Error")
             }
