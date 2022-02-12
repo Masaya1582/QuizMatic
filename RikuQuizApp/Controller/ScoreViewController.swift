@@ -32,31 +32,38 @@ class ScoreViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         
         tableView.register(UINib(nibName: "MainTableViewCell", bundle: nil), forCellReuseIdentifier: "customCell")
         
-        if correct >= 18{
-            commentLabel.text = "You're genius!"
+        if correct <= 1 {
+            scoreLabel.text = "You got \(correct) correct answer"
+        }else {
+            scoreLabel.text = "You got \(correct) correct answers"
+        }
+        
+        if correct == 20 {
+            commentLabel.text = "Perfect!!!"
             
         }else if correct >= 15{
+            commentLabel.text = "You're doing great!!"
+            
+        }else if correct >= 10{
+            commentLabel.text = "You can do better!"
+
+        }else {
             commentLabel.text = "Try one more time!"
-            
-        }else{
-            commentLabel.text = "Practice Everyday!"
-            
         }
-        scoreLabel.text = "Correct Answers:\(correct)"
         
         for button in changeColorButton{
             button.layer.cornerRadius = 20.0
             switch finalResultLevel {
             case 1:
-                button.backgroundColor = .systemYellow
+                button.backgroundColor = UIColor(hex: "ffcb69", alpha: 0.8)
             case 2:
-                button.backgroundColor = .systemTeal
+                button.backgroundColor = UIColor(hex: "4cc9f0", alpha: 0.8)
             case 3:
-                button.backgroundColor = .systemGreen
+                button.backgroundColor = UIColor(hex: "02c39a", alpha: 0.8)
             case 4:
-                button.backgroundColor = .systemPurple
+                button.backgroundColor = UIColor(hex: "9d4edd", alpha: 0.8)
             case 5:
-                button.backgroundColor = .systemRed
+                button.backgroundColor = UIColor(hex: "e5383b", alpha: 0.8)
             default:
                 print("Error")
             }
@@ -81,14 +88,6 @@ class ScoreViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //        let cell = tableView.dequeueReusableCell(withIdentifier: "correctWords", for: indexPath)
-        //        cell.textLabel?.text = resultWord[indexPath.row].correctAnswerWord
-        //        cell.textLabel?.font = UIFont.systemFont(ofSize: 25)
-        //        if resultWord[indexPath.row].result == true{
-        //            cell.imageView?.image = UIImage(named: "correct")
-        //        }else{
-        //            cell.imageView?.image = UIImage(named: "incorrect")
-        //        }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! MainTableViewCell
         if resultWord[indexPath.row].result == true{

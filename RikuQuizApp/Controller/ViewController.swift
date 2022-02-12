@@ -28,11 +28,11 @@ class ViewController: UIViewController {
     private func setUpView() {
         
         titleLabel.backgroundColor = UIColor(hex: "bde0fe", alpha: 1.0)
-        levelOneButton.backgroundColor = UIColor(hex: "ffcb69", alpha: 0.6)
-        levelTwoButton.backgroundColor = UIColor(hex: "4cc9f0", alpha: 0.6)
-        levelThreeButton.backgroundColor = UIColor(hex: "02c39a", alpha: 0.6)
-        levelFourButton.backgroundColor = UIColor(hex: "9d4edd", alpha: 0.6)
-        levelFiveButton.backgroundColor = UIColor(hex: "e5383b", alpha: 0.6)
+        levelOneButton.backgroundColor = UIColor(hex: "ffcb69", alpha: 0.8)
+        levelTwoButton.backgroundColor = UIColor(hex: "4cc9f0", alpha: 0.8)
+        levelThreeButton.backgroundColor = UIColor(hex: "02c39a", alpha: 0.8)
+        levelFourButton.backgroundColor = UIColor(hex: "9d4edd", alpha: 0.8)
+        levelFiveButton.backgroundColor = UIColor(hex: "e5383b", alpha: 0.8)
         
         levelOneButton.layer.cornerRadius = 20.0
         levelTwoButton.layer.cornerRadius = 20.0

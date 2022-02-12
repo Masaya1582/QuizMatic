@@ -55,7 +55,7 @@ class QuizScreenViewController: UIViewController{
         }
         
         quizArray = csvArray[quizCount].components(separatedBy: ",")
-        quizNumberLabel.text = "Question\(quizCount + 1)"
+        quizNumberLabel.text = "Question \(quizCount + 1)"
         quizTextView.text = quizArray[0]
         resetButton()
         csvArray.shuffle()
@@ -93,10 +93,12 @@ class QuizScreenViewController: UIViewController{
             correctCount += 1
             print("正解")
             judgeImageView.image = UIImage(named: "correct")
+            self.judgeImageView.alpha = 0.8
             judgeImageView.isHidden = false
         }else{
             print("不正解")
             judgeImageView.image = UIImage(named: "incorrect")
+            self.judgeImageView.alpha = 0.8
             judgeImageView.isHidden = false
         }
         
@@ -118,13 +120,13 @@ class QuizScreenViewController: UIViewController{
             button.isEnabled = false
         }
         
-        //アニメーションを追加
-        animator = UIViewPropertyAnimator(duration: 1.0,curve: .easeInOut) {
-            self.judgeImageView.center.y += 600
-            self.judgeImageView.alpha = 0.8
-        }
         
-        animator.startAnimation()
+//        animator = UIViewPropertyAnimator(duration: 1.0,curve: .easeInOut) {
+//            self.judgeImageView.center.y += 300
+//            self.judgeImageView.alpha = 0.8
+//        }
+//
+//        animator.startAnimation()
     
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
             self.judgeImageView.isHidden = true
@@ -153,7 +155,7 @@ class QuizScreenViewController: UIViewController{
         quizCount += 1
         if quizCount < csvArray.count{
             quizArray = csvArray[quizCount].components(separatedBy: ",")
-            quizNumberLabel.text = "Question\(quizCount + 1)"
+            quizNumberLabel.text = "Question \(quizCount + 1)"
             quizTextView.text = quizArray[0]
             judgeImageView.isHidden = true
             for button in self.answerButton{
