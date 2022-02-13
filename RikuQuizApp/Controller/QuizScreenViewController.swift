@@ -37,8 +37,6 @@ class QuizScreenViewController: UIViewController{
         self.overrideUserInterfaceStyle = .light
         correctLabel.isHidden = true
         
-        
-        
         switch chosenLevel {
         case 1:
             csvArray = loadCSV(fileName: "levelOne")
