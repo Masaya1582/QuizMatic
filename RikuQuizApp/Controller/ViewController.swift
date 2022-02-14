@@ -1,9 +1,5 @@
-//
-//  ViewController.swift
-//  RikuQuizApp
-//
-//  Created by 中久木雅哉 on 2022/01/02.
-//
+
+
 
 import UIKit
 
@@ -27,7 +23,6 @@ class ViewController: UIViewController {
     
     private func setUpView() {
         
-        titleLabel.backgroundColor = UIColor(hex: "bde0fe", alpha: 1.0)
         levelOneButton.backgroundColor = UIColor(hex: "ffcb69", alpha: 1.0)
         levelTwoButton.backgroundColor = UIColor(hex: "4cc9f0", alpha: 1.0)
         levelThreeButton.backgroundColor = UIColor(hex: "02c39a", alpha: 1.0)
@@ -39,16 +34,21 @@ class ViewController: UIViewController {
         levelThreeButton.layer.cornerRadius = 20.0
         levelFourButton.layer.cornerRadius = 20.0
         levelFiveButton.layer.cornerRadius = 20.0
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         let quizScreenVC = segue.destination as! QuizScreenViewController
         quizScreenVC.chosenLevel = selectedLevel
+        
     }
     
     @IBAction func levelSelectButton(_ sender: UIButton) {
+        
         selectedLevel = sender.tag
         performSegue(withIdentifier: "nextQuiz", sender: nil)
+        
     }
     
 }
