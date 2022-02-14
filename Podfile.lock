@@ -1,20 +1,16 @@
 PODS:
   - PKHUD (5.3.0)
-  - SRCountdownTimer (1.3)
 
 DEPENDENCIES:
   - PKHUD (~> 5.0)
-  - SRCountdownTimer
 
 SPEC REPOS:
   trunk:
     - PKHUD
-    - SRCountdownTimer
 
 SPEC CHECKSUMS:
   PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
-  SRCountdownTimer: b7f833a51cd33003d55df17667b71d26ee17357f
 
-PODFILE CHECKSUM: 6c96be618e2a9ef59004ad594714c811e4b5bd4b
+PODFILE CHECKSUM: 579189f814897f5bc379aa61bd96f1c29be2b0fd
 
 COCOAPODS: 1.11.2

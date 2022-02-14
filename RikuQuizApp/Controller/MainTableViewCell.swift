@@ -1,9 +1,5 @@
-//
-//  MainTableViewCell.swift
-//  RikuQuizApp
-//
-//  Created by Cookie-san on 2022/02/11.
-//
+
+
 
 import UIKit
 

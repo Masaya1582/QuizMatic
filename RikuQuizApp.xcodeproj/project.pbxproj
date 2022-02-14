@@ -26,7 +26,6 @@
 		4097451C27812AC1007EE736 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4097451A27812AC1007EE736 /* LaunchScreen.storyboard */; };
 		4097452627812C75007EE736 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4097452527812C75007EE736 /* ScoreViewController.swift */; };
 		4097452827812E77007EE736 /* levelTwo.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4097452727812E77007EE736 /* levelTwo.csv */; };
-		40A1903127B8F51B00685E11 /* finish.png in Resources */ = {isa = PBXBuildFile; fileRef = 40A1903027B8F51B00685E11 /* finish.png */; };
 		40B09D4C27B69A4400FECE97 /* UIColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B09D4B27B69A4400FECE97 /* UIColorHex.swift */; };
 		40B09D4F27B6A4BB00FECE97 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B09D4D27B6A4BB00FECE97 /* MainTableViewCell.swift */; };
 		40B09D5027B6A4BB00FECE97 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40B09D4E27B6A4BB00FECE97 /* MainTableViewCell.xib */; };
@@ -56,7 +55,6 @@
 		4097451D27812AC1007EE736 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4097452527812C75007EE736 /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 		4097452727812E77007EE736 /* levelTwo.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = levelTwo.csv; sourceTree = "<group>"; };
-		40A1903027B8F51B00685E11 /* finish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = finish.png; sourceTree = "<group>"; };
 		40B09D4B27B69A4400FECE97 /* UIColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorHex.swift; sourceTree = "<group>"; };
 		40B09D4D27B6A4BB00FECE97 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		40B09D4E27B6A4BB00FECE97 /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
@@ -125,7 +123,6 @@
 				4061844727AAAA4D0060B76F /* backImage.png */,
 				4000B87827AE70FE00BEC3C4 /* correct.png */,
 				4000B87027AE6CFB00BEC3C4 /* incorrect.png */,
-				40A1903027B8F51B00685E11 /* finish.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -256,7 +253,6 @@
 				4097451927812AC1007EE736 /* Assets.xcassets in Resources */,
 				4000B87227AE6CFB00BEC3C4 /* incorrect.png in Resources */,
 				4097451727812AB6007EE736 /* Main.storyboard in Resources */,
-				40A1903127B8F51B00685E11 /* finish.png in Resources */,
 				407B72A2278DAF7D00F7AB05 /* levelFive.csv in Resources */,
 				407B72A0278DAF6C00F7AB05 /* levelFour.csv in Resources */,
 				4097452827812E77007EE736 /* levelTwo.csv in Resources */,

@@ -89,6 +89,7 @@ class QuizScreenViewController: UIViewController{
         scoreVC.correct = correctCount
         scoreVC.resultWord = resultArray
         scoreVC.finalResultLevel = chosenLevel
+        
     }
     
     func nextQuiz() {
@@ -107,7 +108,6 @@ class QuizScreenViewController: UIViewController{
             self.quizNumberLabel.textColor = .red
             self.quizNumberLabel.font = UIFont(name: "HiraKakuProN-W3", size: 35)
             self.quizNumberLabel.text = "Finish!"
-            self.judgeImageView.image = UIImage(named: "finish")
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
                 self.performSegue(withIdentifier: "toScoreVC", sender: nil)
             }
