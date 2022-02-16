@@ -25,18 +25,7 @@ class ScoreViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         readAds()
         
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        if interstitial != nil {
-            interstitial?.present(fromRootViewController: self)
-          } else {
-            print("Ad wasn't ready")
-          }
-        
-    }
-    
+
     func setupResultView() {
         
         tableView.register(UINib(nibName: "MainTableViewCell", bundle: nil), forCellReuseIdentifier: "customCell")
@@ -88,34 +77,34 @@ class ScoreViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     func readAds() {
         
         let request = GADRequest()
-        
-        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",request: request,completionHandler: { [self] ad, error in
-            if let error = error {
-                print("Failed to load interstitial ad with error: \(error.localizedDescription)")
-                return
-            }
+            GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",request: request,completionHandler: { [self] ad, error in
+                
+        if let error = error {
+            print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+            return
+        }
             interstitial = ad
             interstitial?.fullScreenContentDelegate = self
-        }
-        )
-        
-        /// Tells the delegate that the ad failed to present full screen content.
-          func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
-            print("Ad did fail to present full screen content.")
-          }
-
-          /// Tells the delegate that the ad presented full screen content.
-          func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-            print("Ad did present full screen content.")
-          }
-
-          /// Tells the delegate that the ad dismissed full screen content.
-          func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-            print("Ad did dismiss full screen content.")
-          }
-        
+        })
     }
     
+    
+    func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
+        print("Ad did fail to present full screen content.")
+      }
+
+    func adWillPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        print("Ad did present full screen content.")
+      }
+
+    func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        print("Ad did dismiss full screen content.")
+          
+        //HUD.flash(.success, delay: 1.0)
+        HUD.flash(.label("Thank you for Playing!"), delay: 1.0)
+        self.presentingViewController?.presentingViewController?.dismiss(animated: true)
+          
+      }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -151,8 +140,11 @@ class ScoreViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     @IBAction func toTopButtonAction(_ sender: Any) {
         
-        HUD.flash(.success, delay: 1.0)
-        self.presentingViewController?.presentingViewController?.dismiss(animated: true)
+        if interstitial != nil {
+            interstitial?.present(fromRootViewController: self)
+          } else {
+            print("Ad wasn't ready")
+          }
         
     }
     
