@@ -3,8 +3,9 @@
 
 import UIKit
 import PKHUD
+import GoogleMobileAds
 
-class ScoreViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
+class ScoreViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,GADFullScreenContentDelegate{
     
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
@@ -15,10 +16,24 @@ class ScoreViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     var resultWord = [SavedAnswer]()
     var finalResultLevel = 0
     
+    private var interstitial: GADInterstitialAd?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupResultView()
+        readAds()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if interstitial != nil {
+            interstitial?.present(fromRootViewController: self)
+          } else {
+            print("Ad wasn't ready")
+          }
         
     }
     
@@ -69,6 +84,38 @@ class ScoreViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         }
         
     }
+    
+    func readAds() {
+        
+        let request = GADRequest()
+        
+        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",request: request,completionHandler: { [self] ad, error in
+            if let error = error {
+                print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+                return
+            }
+            interstitial = ad
+            interstitial?.fullScreenContentDelegate = self
+        }
+        )
+        
+        /// Tells the delegate that the ad failed to present full screen content.
+          func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
+            print("Ad did fail to present full screen content.")
+          }
+
+          /// Tells the delegate that the ad presented full screen content.
+          func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+            print("Ad did present full screen content.")
+          }
+
+          /// Tells the delegate that the ad dismissed full screen content.
+          func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+            print("Ad did dismiss full screen content.")
+          }
+        
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
