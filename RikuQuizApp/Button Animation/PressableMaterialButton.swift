@@ -1,9 +1,5 @@
-//
-//  PressableMaterialButton.swift
-//  RikuQuizApp
-//
-//  Created by 中久木雅哉 on 2022/01/10.
-//
+
+
 
 import UIKit
 
@@ -79,4 +75,5 @@ extension PressableMaterialButton {
         animation.fillMode = CAMediaTimingFillMode.forwards
         self.layer.add(animation, forKey: nil)
     }
+    
 }

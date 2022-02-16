@@ -37,18 +37,14 @@ class ViewController: UIViewController {
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        let quizScreenVC = segue.destination as! QuizScreenViewController
-        quizScreenVC.chosenLevel = selectedLevel
-        
-    }
-    
     @IBAction func levelSelectButton(_ sender: UIButton) {
         
         selectedLevel = sender.tag
-        performSegue(withIdentifier: "nextQuiz", sender: nil)
-        
+        let storyboard = UIStoryboard(name: "Quiz", bundle: nil)
+        let quizVC = storyboard.instantiateViewController(withIdentifier: "quiz") as! QuizScreenViewController
+        quizVC.chosenLevel = selectedLevel
+        self.present(quizVC, animated: true)
+
     }
     
 }

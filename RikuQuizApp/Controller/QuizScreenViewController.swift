@@ -3,7 +3,6 @@
 
 import UIKit
 
-
 class QuizScreenViewController: UIViewController{
     
     @IBOutlet weak var quizNumberLabel: UILabel!
@@ -51,7 +50,6 @@ class QuizScreenViewController: UIViewController{
         quizTextView.text = quizArray[0]
         resetButton()
         csvArray.shuffle()
-        print(csvArray)
         
     }
     
@@ -83,15 +81,6 @@ class QuizScreenViewController: UIViewController{
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        let scoreVC = segue.destination as! ScoreViewController
-        scoreVC.correct = correctCount
-        scoreVC.resultWord = resultArray
-        scoreVC.finalResultLevel = chosenLevel
-        
-    }
-    
     func nextQuiz() {
         
         quizCount += 1
@@ -109,7 +98,12 @@ class QuizScreenViewController: UIViewController{
             self.quizNumberLabel.font = UIFont(name: "HiraKakuProN-W3", size: 35)
             self.quizNumberLabel.text = "Finish!"
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
-                self.performSegue(withIdentifier: "toScoreVC", sender: nil)
+                let storyboard = UIStoryboard(name: "Score", bundle: nil)
+                let scoreVC = storyboard.instantiateViewController(withIdentifier: "score") as! ScoreViewController
+                scoreVC.correct = self.correctCount
+                scoreVC.resultWord = self.resultArray
+                scoreVC.finalResultLevel = self.chosenLevel
+                self.present(scoreVC, animated: true)
             }
         }
         
@@ -190,6 +184,7 @@ class QuizScreenViewController: UIViewController{
         alert.addAction(cancel)
         
         self.present(alert, animated: true)
+        
     }
     
 }

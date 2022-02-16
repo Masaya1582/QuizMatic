@@ -95,7 +95,7 @@ class ScoreViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     @IBAction func shareButtonAction(_ sender: Any) {
         
-        let activityItems = ["I got \(correct) correct answer","#En-En Quiz"]
+        let activityItems = ["Fun to learn English!","#QuizMatics"]
         let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
         self.present(activityVC, animated: true)
         

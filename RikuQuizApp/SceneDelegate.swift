@@ -1,9 +1,6 @@
-//
-//  SceneDelegate.swift
-//  RikuQuizApp
-//
-//  Created by 中久木雅哉 on 2022/01/02.
-//
+
+
+
 
 import UIKit
 
