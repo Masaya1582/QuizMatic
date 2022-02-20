@@ -45,6 +45,7 @@
 		40334879278C668900FF052F /* UIColor+ShadowColorRed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+ShadowColorRed.swift"; sourceTree = "<group>"; };
 		4033487B278C66B400FF052F /* PressableMaterialButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressableMaterialButton.swift; sourceTree = "<group>"; };
 		404D714E27BC7C0D00282FB4 /* launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch.png; sourceTree = "<group>"; };
+		405BD56827BD124D001D10AC /* QuizMaticProvisioning_Profile.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = QuizMaticProvisioning_Profile.mobileprovision; sourceTree = "<group>"; };
 		4061844727AAAA4D0060B76F /* backImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backImage.png; sourceTree = "<group>"; };
 		407B729F278DAF6C00F7AB05 /* levelFour.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = levelFour.csv; sourceTree = "<group>"; };
 		407B72A1278DAF7D00F7AB05 /* levelFive.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = levelFive.csv; sourceTree = "<group>"; };
@@ -150,6 +151,7 @@
 			children = (
 				4097450E27812AB6007EE736 /* RikuQuizApp */,
 				4097451D27812AC1007EE736 /* Info.plist */,
+				405BD56827BD124D001D10AC /* QuizMaticProvisioning_Profile.mobileprovision */,
 				4097450D27812AB5007EE736 /* Products */,
 				C297BC0DEB4DAEDD2BCE45EA /* Pods */,
 				AF655DC1D29632E640FC62AB /* Frameworks */,
@@ -490,7 +492,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.techacademy.masaya.nakakuki.RikuQuizApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -511,7 +513,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.techacademy.masaya.nakakuki.RikuQuizApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
