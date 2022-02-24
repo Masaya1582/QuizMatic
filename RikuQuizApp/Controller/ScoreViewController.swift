@@ -22,7 +22,7 @@ class ScoreViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         super.viewDidLoad()
         
         setupResultView()
-        readAds()
+        loadAds()
         
     }
 
@@ -74,7 +74,7 @@ class ScoreViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         
     }
     
-    func readAds() {
+    func loadAds() {
         
         let request = GADRequest()
             GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",request: request,completionHandler: { [self] ad, error in
@@ -86,10 +86,12 @@ class ScoreViewController: UIViewController,UITableViewDelegate,UITableViewDataS
             interstitial = ad
             interstitial?.fullScreenContentDelegate = self
         })
+        
     }
     
     
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
+        self.presentingViewController?.presentingViewController?.dismiss(animated: true)
         print("Ad did fail to present full screen content.")
       }
 

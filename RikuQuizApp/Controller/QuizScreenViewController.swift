@@ -27,7 +27,7 @@ class QuizScreenViewController: UIViewController,GADFullScreenContentDelegate{
         super.viewDidLoad()
         
         setupView()
-        readAds()
+        loadAds()
         
     }
     
@@ -57,7 +57,7 @@ class QuizScreenViewController: UIViewController,GADFullScreenContentDelegate{
         
     }
     
-    func readAds() {
+    func loadAds() {
         
         let request = GADRequest()
         GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",request: request,completionHandler: { [self] ad, error in
@@ -73,6 +73,7 @@ class QuizScreenViewController: UIViewController,GADFullScreenContentDelegate{
     }
     
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
+        dismiss(animated: true, completion: nil)
         print("Ad did fail to present full screen content.")
     }
     
