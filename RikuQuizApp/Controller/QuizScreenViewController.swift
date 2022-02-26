@@ -27,7 +27,7 @@ class QuizScreenViewController: UIViewController,GADFullScreenContentDelegate{
         super.viewDidLoad()
         
         setupView()
-        loadAds()
+//        loadAds()
         
     }
     
@@ -57,20 +57,20 @@ class QuizScreenViewController: UIViewController,GADFullScreenContentDelegate{
         
     }
     
-    func loadAds() {
-        
-        let request = GADRequest()
-        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",request: request,completionHandler: { [self] ad, error in
-            
-            if let error = error {
-                print("Failed to load interstitial ad with error: \(error.localizedDescription)")
-                return
-            }
-            interstitial = ad
-            interstitial?.fullScreenContentDelegate = self
-        })
-        
-    }
+//    func loadAds() {
+//
+//        let request = GADRequest()
+//        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3728831230250514/5361854342",request: request,completionHandler: { [self] ad, error in
+//
+//            if let error = error {
+//                print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+//                return
+//            }
+//            interstitial = ad
+//            interstitial?.fullScreenContentDelegate = self
+//        })
+//
+//    }
     
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
         dismiss(animated: true, completion: nil)
@@ -211,12 +211,13 @@ class QuizScreenViewController: UIViewController,GADFullScreenContentDelegate{
         
         let backToTop = UIAlertAction(title: "Yes", style: .default, handler: { (action) -> Void in
             
-            if self.interstitial != nil {
-                self.interstitial?.present(fromRootViewController: self)
-            } else {
-                self.dismiss(animated: true, completion: nil)
-                print("Ad wasn't ready")
-            }
+//            if self.interstitial != nil {
+//                self.interstitial?.present(fromRootViewController: self)
+//            } else {
+//                self.dismiss(animated: true, completion: nil)
+//                print("Ad wasn't ready")
+//            }
+            self.dismiss(animated: true, completion: nil)
             
             print("Yes button tapped")
         })

@@ -22,7 +22,7 @@ class ScoreViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         super.viewDidLoad()
         
         setupResultView()
-        loadAds()
+//        loadAds()
         
     }
 
@@ -74,20 +74,20 @@ class ScoreViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         
     }
     
-    func loadAds() {
-        
-        let request = GADRequest()
-            GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",request: request,completionHandler: { [self] ad, error in
-                
-        if let error = error {
-            print("Failed to load interstitial ad with error: \(error.localizedDescription)")
-            return
-        }
-            interstitial = ad
-            interstitial?.fullScreenContentDelegate = self
-        })
-        
-    }
+//    func loadAds() {
+//
+//        let request = GADRequest()
+//            GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3728831230250514/5361854342",request: request,completionHandler: { [self] ad, error in
+//
+//        if let error = error {
+//            print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+//            return
+//        }
+//            interstitial = ad
+//            interstitial?.fullScreenContentDelegate = self
+//        })
+//
+//    }
     
     
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
@@ -103,8 +103,8 @@ class ScoreViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         print("Ad did dismiss full screen content.")
           
         //HUD.flash(.success, delay: 1.0)
-        HUD.flash(.label("Thank you for Playing!"), delay: 1.0)
-        self.presentingViewController?.presentingViewController?.dismiss(animated: true)
+//        HUD.flash(.label("Thank you for Playing!"), delay: 1.0)
+//        self.presentingViewController?.presentingViewController?.dismiss(animated: true)
           
       }
     
@@ -141,13 +141,16 @@ class ScoreViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     
     @IBAction func toTopButtonAction(_ sender: Any) {
+//
+//        if interstitial != nil {
+//            interstitial?.present(fromRootViewController: self)
+//          } else {
+//            self.presentingViewController?.presentingViewController?.dismiss(animated: true)
+//            print("Ad wasn't ready")
+//          }
         
-        if interstitial != nil {
-            interstitial?.present(fromRootViewController: self)
-          } else {
-            self.presentingViewController?.presentingViewController?.dismiss(animated: true)
-            print("Ad wasn't ready")
-          }
+//        HUD.flash(.label("Thank you for Playing!"), delay: 1.0)
+        self.presentingViewController?.presentingViewController?.dismiss(animated: true)
         
     }
     

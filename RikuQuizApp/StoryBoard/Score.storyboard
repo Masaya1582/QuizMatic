@@ -68,7 +68,7 @@
                                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Share the Result">
+                                        <buttonConfiguration key="configuration" style="plain" title="Share Your Result">
                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="25"/>
                                         </buttonConfiguration>
                                         <connections>
