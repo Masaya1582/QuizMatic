@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         sleep(2)
         
-        GADMobileAds.sharedInstance().start(completionHandler: nil)
+//        GADMobileAds.sharedInstance().start(completionHandler: nil)
         
         return true
     }

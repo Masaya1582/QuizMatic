@@ -16,7 +16,7 @@ class ScoreViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     var resultWord = [SavedAnswer]()
     var finalResultLevel = 0
     
-    private var interstitial: GADInterstitialAd?
+    //private var interstitial: GADInterstitialAd?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,23 +90,23 @@ class ScoreViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 //    }
     
     
-    func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
-        self.presentingViewController?.presentingViewController?.dismiss(animated: true)
-        print("Ad did fail to present full screen content.")
-      }
-
-    func adWillPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        print("Ad did present full screen content.")
-      }
-
-    func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        print("Ad did dismiss full screen content.")
-          
-        //HUD.flash(.success, delay: 1.0)
+//    func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
+//        self.presentingViewController?.presentingViewController?.dismiss(animated: true)
+//        print("Ad did fail to present full screen content.")
+//      }
+//
+//    func adWillPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+//        print("Ad did present full screen content.")
+//      }
+//
+//    func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+//        print("Ad did dismiss full screen content.")
+//
+//        HUD.flash(.success, delay: 1.0)
 //        HUD.flash(.label("Thank you for Playing!"), delay: 1.0)
 //        self.presentingViewController?.presentingViewController?.dismiss(animated: true)
-          
-      }
+//
+//      }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         

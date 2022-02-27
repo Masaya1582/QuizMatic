@@ -21,7 +21,7 @@ class QuizScreenViewController: UIViewController,GADFullScreenContentDelegate{
     var chosenLevel = 0
     var resultArray: [SavedAnswer] = []
     
-    private var interstitial: GADInterstitialAd?
+    //private var interstitial: GADInterstitialAd?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,22 +72,22 @@ class QuizScreenViewController: UIViewController,GADFullScreenContentDelegate{
 //
 //    }
     
-    func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
-        dismiss(animated: true, completion: nil)
-        print("Ad did fail to present full screen content.")
-    }
-    
-    func adWillPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        print("Ad did present full screen content.")
-    }
-    
-    func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        print("Ad did dismiss full screen content.")
-        
-        HUD.flash(.success, delay: 1.0)
-        dismiss(animated: true, completion: nil)
-        
-    }
+//    func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
+//        dismiss(animated: true, completion: nil)
+//        print("Ad did fail to present full screen content.")
+//    }
+//
+//    func adWillPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+//        print("Ad did present full screen content.")
+//    }
+//
+//    func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+//        print("Ad did dismiss full screen content.")
+//
+//        HUD.flash(.success, delay: 1.0)
+//        dismiss(animated: true, completion: nil)
+//
+//    }
     
     private func resetButton() {
         
@@ -195,10 +195,10 @@ class QuizScreenViewController: UIViewController,GADFullScreenContentDelegate{
             button.isEnabled = false
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
             self.judgeImageView.isHidden = true
             
-            for button in self.answerButton{
+            for button in self.answerButton {
                 button.isEnabled = true
             }
             self.nextQuiz()
@@ -217,6 +217,7 @@ class QuizScreenViewController: UIViewController,GADFullScreenContentDelegate{
 //                self.dismiss(animated: true, completion: nil)
 //                print("Ad wasn't ready")
 //            }
+            
             self.dismiss(animated: true, completion: nil)
             
             print("Yes button tapped")
