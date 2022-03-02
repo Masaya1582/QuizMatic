@@ -3,9 +3,8 @@
 
 import UIKit
 import PKHUD
-import GoogleMobileAds
 
-class ScoreViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,GADFullScreenContentDelegate{
+class ScoreViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
@@ -16,18 +15,12 @@ class ScoreViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     var resultWord = [SavedAnswer]()
     var finalResultLevel = 0
     
-    //private var interstitial: GADInterstitialAd?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupResultView()
-//        loadAds()
-        
     }
-
+    
     func setupResultView() {
-        
         tableView.register(UINib(nibName: "MainTableViewCell", bundle: nil), forCellReuseIdentifier: "customCell")
         
         if correct <= 1 {
@@ -47,14 +40,13 @@ class ScoreViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         }else if correct >= 10{
             commentLabel.text = "You can do better!"
             commentLabel.textColor = .red
-
+            
         }else {
             commentLabel.text = "Try one more time!"
             commentLabel.textColor = .red
         }
         
         for button in changeColorButton{
-            
             button.layer.cornerRadius = 20.0
             switch finalResultLevel {
             case 1:
@@ -71,51 +63,13 @@ class ScoreViewController: UIViewController,UITableViewDelegate,UITableViewDataS
                 print("Error")
             }
         }
-        
     }
     
-//    func loadAds() {
-//
-//        let request = GADRequest()
-//            GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3728831230250514/5361854342",request: request,completionHandler: { [self] ad, error in
-//
-//        if let error = error {
-//            print("Failed to load interstitial ad with error: \(error.localizedDescription)")
-//            return
-//        }
-//            interstitial = ad
-//            interstitial?.fullScreenContentDelegate = self
-//        })
-//
-//    }
-    
-    
-//    func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
-//        self.presentingViewController?.presentingViewController?.dismiss(animated: true)
-//        print("Ad did fail to present full screen content.")
-//      }
-//
-//    func adWillPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-//        print("Ad did present full screen content.")
-//      }
-//
-//    func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-//        print("Ad did dismiss full screen content.")
-//
-//        HUD.flash(.success, delay: 1.0)
-//        HUD.flash(.label("Thank you for Playing!"), delay: 1.0)
-//        self.presentingViewController?.presentingViewController?.dismiss(animated: true)
-//
-//      }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return resultWord.count
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! MainTableViewCell
         if resultWord[indexPath.row].result == true{
             cell.kekkaImage.image = UIImage(named: "correct")
@@ -125,31 +79,19 @@ class ScoreViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         
         cell.seikaiLabel.text = resultWord[indexPath.row].correctAnswerWord
         cell.seikaiLabel.font = UIFont.systemFont(ofSize: 25)
-        
         return cell
-        
     }
     
     
     @IBAction func shareButtonAction(_ sender: Any) {
-        
         let activityItems = ["Fun to learn English!","#QuizMatic"]
         let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
         self.present(activityVC, animated: true)
-        
     }
     
     
     @IBAction func toTopButtonAction(_ sender: Any) {
-//
-//        if interstitial != nil {
-//            interstitial?.present(fromRootViewController: self)
-//          } else {
-//            self.presentingViewController?.presentingViewController?.dismiss(animated: true)
-//            print("Ad wasn't ready")
-//          }
-        
-//        HUD.flash(.label("Thank you for Playing!"), delay: 1.0)
+        HUD.flash(.label("Thank you for Playing!"), delay: 1.0)
         self.presentingViewController?.presentingViewController?.dismiss(animated: true)
         
     }
