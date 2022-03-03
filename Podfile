@@ -7,5 +7,6 @@ target 'RikuQuizApp' do
 
   # Pods for RikuQuizApp
     pod 'PKHUD', '~> 5.0'
+    pod 'Google-Mobile-Ads-SDK'
 
 end

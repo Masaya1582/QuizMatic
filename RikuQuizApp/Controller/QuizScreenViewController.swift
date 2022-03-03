@@ -49,36 +49,6 @@ class QuizScreenViewController: UIViewController{
         resetButton()
     }
     
-    func readAds() {
-        
-        let request = GADRequest()
-        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",request: request,completionHandler: { [self] ad, error in
-            
-            if let error = error {
-                print("Failed to load interstitial ad with error: \(error.localizedDescription)")
-                return
-            }
-            interstitial = ad
-            interstitial?.fullScreenContentDelegate = self
-        })
-        
-    }
-    
-    func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
-        print("Ad did fail to present full screen content.")
-    }
-    
-    func adWillPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        print("Ad did present full screen content.")
-    }
-    
-    func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        print("Ad did dismiss full screen content.")
-        
-        HUD.flash(.success, delay: 1.0)
-        dismiss(animated: true, completion: nil)
-    }
-    
     private func resetButton() {
         for (index, button) in answerButton.enumerated() {
             button.layer.cornerRadius = 20
