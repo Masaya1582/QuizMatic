@@ -47,8 +47,6 @@ class QuizScreenViewController: UIViewController{
         quizNumberLabel.text = "Question \(quizCount + 1)"
         quizTextView.text = quizArray[0]
         resetButton()
-<<<<<<< HEAD
-        
     }
     
     func readAds() {
@@ -79,9 +77,6 @@ class QuizScreenViewController: UIViewController{
         
         HUD.flash(.success, delay: 1.0)
         dismiss(animated: true, completion: nil)
-        
-=======
->>>>>>> ecadebc42f24c3df3d05898e6e99b8e12e8ab282
     }
     
     private func resetButton() {

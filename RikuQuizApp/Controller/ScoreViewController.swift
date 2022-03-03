@@ -65,7 +65,6 @@ class ScoreViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
-<<<<<<< HEAD
     func readAds() {
         
         let request = GADRequest()
@@ -98,8 +97,6 @@ class ScoreViewController: UIViewController, UITableViewDelegate, UITableViewDat
           
       }
     
-=======
->>>>>>> ecadebc42f24c3df3d05898e6e99b8e12e8ab282
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return resultWord.count
     }
@@ -119,10 +116,6 @@ class ScoreViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     
     @IBAction func shareButtonAction(_ sender: Any) {
-<<<<<<< HEAD
-        
-=======
->>>>>>> ecadebc42f24c3df3d05898e6e99b8e12e8ab282
         let activityItems = ["Fun to learn English!","#QuizMatic"]
         let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
         self.present(activityVC, animated: true)
@@ -130,18 +123,13 @@ class ScoreViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     
     @IBAction func toTopButtonAction(_ sender: Any) {
-<<<<<<< HEAD
-        
         if interstitial != nil {
             interstitial?.present(fromRootViewController: self)
           } else {
             self.presentingViewController?.presentingViewController?.dismiss(animated: true)
           }
-=======
         HUD.flash(.label("Thank you for Playing!"), delay: 1.0)
         self.presentingViewController?.presentingViewController?.dismiss(animated: true)
->>>>>>> ecadebc42f24c3df3d05898e6e99b8e12e8ab282
-        
     }
     
 }
