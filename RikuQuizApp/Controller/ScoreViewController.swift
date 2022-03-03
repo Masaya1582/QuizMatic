@@ -3,9 +3,8 @@
 
 import UIKit
 import PKHUD
-import GoogleMobileAds
 
-class ScoreViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,GADFullScreenContentDelegate{
+class ScoreViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
@@ -16,18 +15,12 @@ class ScoreViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     var resultWord = [SavedAnswer]()
     var finalResultLevel = 0
     
-    private var interstitial: GADInterstitialAd?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupResultView()
-        readAds()
-        
     }
-
+    
     func setupResultView() {
-        
         tableView.register(UINib(nibName: "MainTableViewCell", bundle: nil), forCellReuseIdentifier: "customCell")
         
         if correct <= 1 {
@@ -47,14 +40,13 @@ class ScoreViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         }else if correct >= 10{
             commentLabel.text = "You can do better!"
             commentLabel.textColor = .red
-
+            
         }else {
             commentLabel.text = "Try one more time!"
             commentLabel.textColor = .red
         }
         
         for button in changeColorButton{
-            
             button.layer.cornerRadius = 20.0
             switch finalResultLevel {
             case 1:
@@ -71,9 +63,9 @@ class ScoreViewController: UIViewController,UITableViewDelegate,UITableViewDataS
                 print("Error")
             }
         }
-        
     }
     
+<<<<<<< HEAD
     func readAds() {
         
         let request = GADRequest()
@@ -106,14 +98,13 @@ class ScoreViewController: UIViewController,UITableViewDelegate,UITableViewDataS
           
       }
     
+=======
+>>>>>>> ecadebc42f24c3df3d05898e6e99b8e12e8ab282
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return resultWord.count
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! MainTableViewCell
         if resultWord[indexPath.row].result == true{
             cell.kekkaImage.image = UIImage(named: "correct")
@@ -123,28 +114,33 @@ class ScoreViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         
         cell.seikaiLabel.text = resultWord[indexPath.row].correctAnswerWord
         cell.seikaiLabel.font = UIFont.systemFont(ofSize: 25)
-        
         return cell
-        
     }
     
     
     @IBAction func shareButtonAction(_ sender: Any) {
+<<<<<<< HEAD
         
+=======
+>>>>>>> ecadebc42f24c3df3d05898e6e99b8e12e8ab282
         let activityItems = ["Fun to learn English!","#QuizMatic"]
         let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
         self.present(activityVC, animated: true)
-        
     }
     
     
     @IBAction func toTopButtonAction(_ sender: Any) {
+<<<<<<< HEAD
         
         if interstitial != nil {
             interstitial?.present(fromRootViewController: self)
           } else {
             self.presentingViewController?.presentingViewController?.dismiss(animated: true)
           }
+=======
+        HUD.flash(.label("Thank you for Playing!"), delay: 1.0)
+        self.presentingViewController?.presentingViewController?.dismiss(animated: true)
+>>>>>>> ecadebc42f24c3df3d05898e6e99b8e12e8ab282
         
     }
     
