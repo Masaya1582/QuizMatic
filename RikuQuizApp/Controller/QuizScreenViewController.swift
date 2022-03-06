@@ -42,8 +42,8 @@ class QuizScreenViewController: UIViewController{
         }
         
         correctLabel.isHidden = true
-        quizArray = csvArray[quizCount].components(separatedBy: ",")
         csvArray.shuffle()
+        quizArray = csvArray[quizCount].components(separatedBy: ",")
         quizNumberLabel.text = "Question \(quizCount + 1)"
         quizTextView.text = quizArray[0]
         resetButton()
@@ -90,6 +90,9 @@ class QuizScreenViewController: UIViewController{
             self.quizNumberLabel.textColor = .red
             self.quizNumberLabel.font = UIFont(name: "HiraKakuProN-W3", size: 35)
             self.quizNumberLabel.text = "Finish!"
+            for button in answerButton{
+                button.isEnabled = false
+            }
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
                 let storyboard = UIStoryboard(name: "Score", bundle: nil)
                 let scoreVC = storyboard.instantiateViewController(withIdentifier: "score") as! ScoreViewController
