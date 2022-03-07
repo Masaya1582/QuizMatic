@@ -3,8 +3,9 @@
 
 import UIKit
 import PKHUD
+import GoogleMobileAds
 
-class QuizScreenViewController: UIViewController{
+class QuizScreenViewController: UIViewController, GADFullScreenContentDelegate{
     
     @IBOutlet weak var quizNumberLabel: UILabel!
     @IBOutlet weak var quizTextView: UITextView!
@@ -19,10 +20,12 @@ class QuizScreenViewController: UIViewController{
     var correctCount = 0
     var chosenLevel = 0
     var resultArray: [SavedAnswer] = []
+    private var interstitial: GADInterstitialAd?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        setupAd()
     }
     
     private func setupView() {
@@ -47,6 +50,36 @@ class QuizScreenViewController: UIViewController{
         quizNumberLabel.text = "Question \(quizCount + 1)"
         quizTextView.text = quizArray[0]
         resetButton()
+    }
+    
+    private func setupAd() {
+        let request = GADRequest()
+        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",request: request,completionHandler: { [self] ad, error in
+            if let error = error {
+                print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+                return
+            }
+            interstitial = ad
+            interstitial?.fullScreenContentDelegate = self
+        }
+        )
+    }
+    
+    /// Tells the delegate that the ad failed to present full screen content.
+    func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
+        print("Ad did fail to present full screen content.")
+    }
+    
+    /// Tells the delegate that the ad presented full screen content.
+    func adWillPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        print("Ad did present full screen content.")
+    }
+    
+    /// Tells the delegate that the ad dismissed full screen content.
+    func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        print("Ad did dismiss full screen content.")
+        HUD.flash(.label("Come Back Any Time!"), delay: 1.0)
+        self.dismiss(animated: true, completion: nil)
     }
     
     private func resetButton() {
@@ -156,7 +189,13 @@ class QuizScreenViewController: UIViewController{
     @IBAction func quitButton(_ sender: Any) {
         let alert = UIAlertController(title: "Quit", message: "Back to top screen?", preferredStyle: .alert)
         let backToTop = UIAlertAction(title: "Yes", style: .default, handler: { (action) -> Void in
-            self.dismiss(animated: true, completion: nil)
+            if self.interstitial != nil {
+                self.interstitial?.present(fromRootViewController: self)
+              } else {
+                print("Ad wasn't ready")
+                  HUD.flash(.label("Come Back Any Time!"), delay: 1.0)
+                  self.dismiss(animated: true, completion: nil)
+              }
         })
         let cancel = UIAlertAction(title: "Cancel", style: .cancel)
         alert.addAction(backToTop)
