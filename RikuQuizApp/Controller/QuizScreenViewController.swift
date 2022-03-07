@@ -5,7 +5,7 @@ import UIKit
 import PKHUD
 import GoogleMobileAds
 
-class QuizScreenViewController: UIViewController, GADFullScreenContentDelegate{
+class QuizScreenViewController: UIViewController {
     
     @IBOutlet weak var quizNumberLabel: UILabel!
     @IBOutlet weak var quizTextView: UITextView!
@@ -53,6 +53,7 @@ class QuizScreenViewController: UIViewController, GADFullScreenContentDelegate{
     }
     
     private func setupAd() {
+        interstitial?.fullScreenContentDelegate = self
         let request = GADRequest()
         GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",request: request,completionHandler: { [self] ad, error in
             if let error = error {
@@ -63,23 +64,6 @@ class QuizScreenViewController: UIViewController, GADFullScreenContentDelegate{
             interstitial?.fullScreenContentDelegate = self
         }
         )
-    }
-    
-    /// Tells the delegate that the ad failed to present full screen content.
-    func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
-        print("Ad did fail to present full screen content.")
-    }
-    
-    /// Tells the delegate that the ad presented full screen content.
-    func adWillPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        print("Ad did present full screen content.")
-    }
-    
-    /// Tells the delegate that the ad dismissed full screen content.
-    func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        print("Ad did dismiss full screen content.")
-        HUD.flash(.label("Come Back Any Time!"), delay: 1.0)
-        self.dismiss(animated: true, completion: nil)
     }
     
     private func resetButton() {
@@ -191,15 +175,35 @@ class QuizScreenViewController: UIViewController, GADFullScreenContentDelegate{
         let backToTop = UIAlertAction(title: "Yes", style: .default, handler: { (action) -> Void in
             if self.interstitial != nil {
                 self.interstitial?.present(fromRootViewController: self)
-              } else {
+            } else {
                 print("Ad wasn't ready")
-                  HUD.flash(.label("Come Back Any Time!"), delay: 1.0)
-                  self.dismiss(animated: true, completion: nil)
-              }
+                HUD.flash(.label("Come Back Any Time!"), delay: 1.0)
+                self.dismiss(animated: true, completion: nil)
+            }
         })
         let cancel = UIAlertAction(title: "Cancel", style: .cancel)
         alert.addAction(backToTop)
         alert.addAction(cancel)
         self.present(alert, animated: true)
     }
+}
+
+extension QuizScreenViewController: GADFullScreenContentDelegate {
+    /// Tells the delegate that the ad failed to present full screen content.
+    func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
+        print("Ad did fail to present full screen content.")
+    }
+    
+    /// Tells the delegate that the ad presented full screen content.
+    func adWillPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        print("Ad did present full screen content.")
+    }
+    
+    /// Tells the delegate that the ad dismissed full screen content.
+    func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        print("Ad did dismiss full screen content.")
+        HUD.flash(.label("Come Back Any Time!"), delay: 1.0)
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }

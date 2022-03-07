@@ -5,7 +5,7 @@ import UIKit
 import PKHUD
 import GoogleMobileAds
 
-class ScoreViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, GADFullScreenContentDelegate{
+class ScoreViewController: UIViewController {
     
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
@@ -24,6 +24,8 @@ class ScoreViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     private func setupResultView() {
+        tableView.delegate = self
+        tableView.dataSource = self
         tableView.register(UINib(nibName: "MainTableViewCell", bundle: nil), forCellReuseIdentifier: "customCell")
         
         if correct <= 1 {
@@ -69,6 +71,7 @@ class ScoreViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     private func setupAd() {
+        interstitial?.fullScreenContentDelegate = self
         let request = GADRequest()
         GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",request: request,completionHandler: { [self] ad, error in
             if let error = error {
@@ -81,23 +84,25 @@ class ScoreViewController: UIViewController, UITableViewDelegate, UITableViewDat
         )
     }
     
-    /// Tells the delegate that the ad failed to present full screen content.
-    func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
-        print("Ad did fail to present full screen content.")
+    @IBAction func shareButtonAction(_ sender: Any) {
+        let activityItems = ["Fun to learn English!","#QuizMatic"]
+        let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        self.present(activityVC, animated: true)
     }
     
-    /// Tells the delegate that the ad presented full screen content.
-    func adWillPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        print("Ad did present full screen content.")
+    @IBAction func toTopButtonAction(_ sender: Any) {
+        if interstitial != nil {
+            interstitial?.present(fromRootViewController: self)
+        } else {
+            print("Ad wasn't ready")
+            HUD.flash(.label("Thank you for Playing!"), delay: 1.0)
+            self.presentingViewController?.presentingViewController?.dismiss(animated: true)
+        }
     }
-    
-    /// Tells the delegate that the ad dismissed full screen content.
-    func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        print("Ad did dismiss full screen content.")
-        HUD.flash(.label("Thank you for Playing!"), delay: 1.0)
-        self.presentingViewController?.presentingViewController?.dismiss(animated: true)
-    }
-    
+
+}
+
+extension ScoreViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return resultWord.count
     }
@@ -115,23 +120,23 @@ class ScoreViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return cell
     }
     
-    
-    @IBAction func shareButtonAction(_ sender: Any) {
-        let activityItems = ["Fun to learn English!","#QuizMatic"]
-        let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
-        self.present(activityVC, animated: true)
+}
+
+extension ScoreViewController: GADFullScreenContentDelegate {
+    /// Tells the delegate that the ad failed to present full screen content.
+    func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
+        print("Ad did fail to present full screen content.")
     }
     
-    
-    @IBAction func toTopButtonAction(_ sender: Any) {
-        if interstitial != nil {
-            interstitial?.present(fromRootViewController: self)
-          } else {
-            print("Ad wasn't ready")
-              HUD.flash(.label("Thank you for Playing!"), delay: 1.0)
-              self.presentingViewController?.presentingViewController?.dismiss(animated: true)
-          }
-        
+    /// Tells the delegate that the ad presented full screen content.
+    func adWillPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        print("Ad did present full screen content.")
     }
     
+    /// Tells the delegate that the ad dismissed full screen content.
+    func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        print("Ad did dismiss full screen content.")
+        HUD.flash(.label("Thank you for Playing!"), delay: 1.0)
+        self.presentingViewController?.presentingViewController?.dismiss(animated: true)
+    }
 }
