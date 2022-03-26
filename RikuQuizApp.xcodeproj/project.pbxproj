@@ -109,24 +109,13 @@
 				401D3A6427831B0A00178703 /* QuizScreenViewController.swift */,
 				4097452527812C75007EE736 /* ScoreViewController.swift */,
 				40B09D4D27B6A4BB00FECE97 /* MainTableViewCell.swift */,
-				40B09D4E27B6A4BB00FECE97 /* MainTableViewCell.xib */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		408F068427B3EB090096CFAF /* Class */ = {
-			isa = PBXGroup;
-			children = (
-				40B09D4B27B69A4400FECE97 /* UIColorHex.swift */,
-				408664DB27919BCE00588AE7 /* SavedAnswer.swift */,
-			);
-			path = Class;
 			sourceTree = "<group>";
 		};
 		408F068527B3EB240096CFAF /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				4097451827812AC1007EE736 /* Assets.xcassets */,
 				4061844727AAAA4D0060B76F /* backImage.png */,
 				4000B87827AE70FE00BEC3C4 /* correct.png */,
 				4000B87027AE6CFB00BEC3C4 /* incorrect.png */,
@@ -135,23 +124,14 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
-		408F068627B3EB360096CFAF /* StoryBoard */ = {
-			isa = PBXGroup;
-			children = (
-				4097451527812AB6007EE736 /* Main.storyboard */,
-				409EE10B27BA026A00FEAFCE /* Quiz.storyboard */,
-				409EE10D27BA07A800FEAFCE /* Score.storyboard */,
-				4097451A27812AC1007EE736 /* LaunchScreen.storyboard */,
-			);
-			path = StoryBoard;
-			sourceTree = "<group>";
-		};
 		4097450327812AB5007EE736 = {
 			isa = PBXGroup;
 			children = (
 				4097450E27812AB6007EE736 /* RikuQuizApp */,
+				408F068527B3EB240096CFAF /* Images */,
+				40FBBAA627EF12EB00A4E46A /* Certificate */,
+				4097451827812AC1007EE736 /* Assets.xcassets */,
 				4097451D27812AC1007EE736 /* Info.plist */,
-				405BD56827BD124D001D10AC /* QuizMaticProvisioning_Profile.mobileprovision */,
 				4097450D27812AB5007EE736 /* Products */,
 				C297BC0DEB4DAEDD2BCE45EA /* Pods */,
 				AF655DC1D29632E640FC62AB /* Frameworks */,
@@ -171,14 +151,42 @@
 			children = (
 				4097450F27812AB6007EE736 /* AppDelegate.swift */,
 				4097451127812AB6007EE736 /* SceneDelegate.swift */,
+				40FBBAA427EF126100A4E46A /* Model */,
+				40FBBAA527EF128500A4E46A /* View */,
 				408F068327B3EAEE0096CFAF /* Controller */,
-				408F068427B3EB090096CFAF /* Class */,
-				408F068627B3EB360096CFAF /* StoryBoard */,
 				408F068227B3EAD00096CFAF /* Button Animation */,
 				405506C427B2976D00D665EF /* CSV */,
-				408F068527B3EB240096CFAF /* Images */,
 			);
 			path = RikuQuizApp;
+			sourceTree = "<group>";
+		};
+		40FBBAA427EF126100A4E46A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				40B09D4B27B69A4400FECE97 /* UIColorHex.swift */,
+				408664DB27919BCE00588AE7 /* SavedAnswer.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		40FBBAA527EF128500A4E46A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4097451527812AB6007EE736 /* Main.storyboard */,
+				409EE10B27BA026A00FEAFCE /* Quiz.storyboard */,
+				409EE10D27BA07A800FEAFCE /* Score.storyboard */,
+				4097451A27812AC1007EE736 /* LaunchScreen.storyboard */,
+				40B09D4E27B6A4BB00FECE97 /* MainTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		40FBBAA627EF12EB00A4E46A /* Certificate */ = {
+			isa = PBXGroup;
+			children = (
+				405BD56827BD124D001D10AC /* QuizMaticProvisioning_Profile.mobileprovision */,
+			);
+			path = Certificate;
 			sourceTree = "<group>";
 		};
 		AF655DC1D29632E640FC62AB /* Frameworks */ = {
@@ -482,7 +490,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.5.1;
+				CURRENT_PROJECT_VERSION = 1.5.3;
 				DEVELOPMENT_TEAM = L6Q3MJXV23;
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
@@ -490,7 +498,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5.1;
+				MARKETING_VERSION = 1.5.3;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.techacademy.masaya.nakakuki.RikuQuizApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -505,7 +513,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.5.1;
+				CURRENT_PROJECT_VERSION = 1.5.3;
 				DEVELOPMENT_TEAM = L6Q3MJXV23;
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
@@ -513,7 +521,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5.1;
+				MARKETING_VERSION = 1.5.3;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.techacademy.masaya.nakakuki.RikuQuizApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
