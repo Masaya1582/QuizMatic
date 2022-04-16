@@ -22,12 +22,14 @@ class QuizScreenViewController: UIViewController {
     var resultArray: [SavedAnswer] = []
     private var interstitial: GADInterstitialAd?
     
+    //テストです
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         setupAd()
     }
     
+    //どの問題を読み込むかを決定
     private func setupView() {
         switch chosenLevel {
         case 1:
@@ -55,6 +57,8 @@ class QuizScreenViewController: UIViewController {
     private func setupAd() {
         interstitial?.fullScreenContentDelegate = self
         let request = GADRequest()
+        
+        //本番用広告ID
         GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3728831230250514/5361854342",request: request,completionHandler: { [self] ad, error in
             if let error = error {
                 print("Failed to load interstitial ad with error: \(error.localizedDescription)")
@@ -62,8 +66,17 @@ class QuizScreenViewController: UIViewController {
             }
             interstitial = ad
             interstitial?.fullScreenContentDelegate = self
-        }
-        )
+        })
+        
+        //テスト用広告ID
+//        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",request: request,completionHandler: { [self] ad, error in
+//            if let error = error {
+//                print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+//                return
+//            }
+//            interstitial = ad
+//            interstitial?.fullScreenContentDelegate = self
+//        })
     }
     
     private func resetButton() {

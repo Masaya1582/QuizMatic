@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var levelFourButton: UIButton!
     @IBOutlet weak var levelFiveButton: UIButton!
     
+    //レベルの識別
     var selectedLevel = 0
     
     override func viewDidLoad() {
@@ -19,6 +20,7 @@ class ViewController: UIViewController {
         setUpView()
     }
     
+    //初期画面の設定、ボタンの角を丸くする
     private func setUpView() {
         levelOneButton.layer.cornerRadius = 20.0
         levelTwoButton.layer.cornerRadius = 20.0
@@ -27,6 +29,7 @@ class ViewController: UIViewController {
         levelFiveButton.layer.cornerRadius = 20.0
     }
     
+    //レベル別に判断、遷移先でのボタンの色などを決定
     @IBAction func levelSelectButton(_ sender: UIButton) {
         selectedLevel = sender.tag
         let storyboard = UIStoryboard(name: "Quiz", bundle: nil)
