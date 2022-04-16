@@ -22,7 +22,6 @@ class QuizScreenViewController: UIViewController {
     var resultArray: [SavedAnswer] = []
     private var interstitial: GADInterstitialAd?
     
-    //テストです
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -54,22 +53,13 @@ class QuizScreenViewController: UIViewController {
         resetButton()
     }
     
+    //広告表示設定
     private func setupAd() {
         interstitial?.fullScreenContentDelegate = self
         let request = GADRequest()
         
         //本番用広告ID
-        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3728831230250514/5361854342",request: request,completionHandler: { [self] ad, error in
-            if let error = error {
-                print("Failed to load interstitial ad with error: \(error.localizedDescription)")
-                return
-            }
-            interstitial = ad
-            interstitial?.fullScreenContentDelegate = self
-        })
-        
-        //テスト用広告ID
-//        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",request: request,completionHandler: { [self] ad, error in
+//        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3728831230250514/5361854342",request: request,completionHandler: { [self] ad, error in
 //            if let error = error {
 //                print("Failed to load interstitial ad with error: \(error.localizedDescription)")
 //                return
@@ -77,8 +67,19 @@ class QuizScreenViewController: UIViewController {
 //            interstitial = ad
 //            interstitial?.fullScreenContentDelegate = self
 //        })
+        
+        //テスト用広告ID
+        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",request: request,completionHandler: { [self] ad, error in
+            if let error = error {
+                print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+                return
+            }
+            interstitial = ad
+            interstitial?.fullScreenContentDelegate = self
+        })
     }
     
+    //ボタンの見た目
     private func resetButton() {
         for (index, button) in answerButton.enumerated() {
             button.layer.cornerRadius = 20
@@ -105,6 +106,7 @@ class QuizScreenViewController: UIViewController {
         }
     }
     
+    //次の問題に移る
     func nextQuiz() {
         quizCount += 1
         if quizCount < csvArray.count{
@@ -136,6 +138,7 @@ class QuizScreenViewController: UIViewController {
         correctLabel.isHidden = true
     }
     
+    //CSVの読み込み
     func loadCSV(fileName: String) -> [String] {
         let csvBundle = Bundle.main.path(forResource: fileName, ofType: "csv")!
         do{
@@ -149,6 +152,7 @@ class QuizScreenViewController: UIViewController {
         return csvArray
     }
     
+    //正誤判定
     @IBAction func btnAction(_ sender: UIButton) {
         if sender.tag == Int(quizArray[1]) {
             correctCount += 1
@@ -172,7 +176,7 @@ class QuizScreenViewController: UIViewController {
         for button in answerButton{
             button.isEnabled = false
         }
-        
+        //1.2秒後に次の問題へと移行
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
             self.judgeImageView.isHidden = true
             
@@ -183,6 +187,7 @@ class QuizScreenViewController: UIViewController {
         }
     }
     
+    //止めるボタン
     @IBAction func quitButton(_ sender: Any) {
         let alert = UIAlertController(title: "Quit", message: "Back to top screen?", preferredStyle: .alert)
         let backToTop = UIAlertAction(title: "Yes", style: .default, handler: { (action) -> Void in
@@ -201,6 +206,7 @@ class QuizScreenViewController: UIViewController {
     }
 }
 
+//広告表示詳細設定
 extension QuizScreenViewController: GADFullScreenContentDelegate {
     /// Tells the delegate that the ad failed to present full screen content.
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {

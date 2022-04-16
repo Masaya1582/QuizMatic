@@ -23,11 +23,13 @@ class ScoreViewController: UIViewController {
         setupAd()
     }
     
+    //初期画面設定
     private func setupResultView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "MainTableViewCell", bundle: nil), forCellReuseIdentifier: "customCell")
         
+        //正答数によってメッセージを変える
         if correct <= 1 {
             scoreLabel.text = "\(correct) correct answer"
         }else {
@@ -51,6 +53,7 @@ class ScoreViewController: UIViewController {
             commentLabel.textColor = .red
         }
         
+        //レベル別に色を変える
         for button in changeColorButton{
             button.layer.cornerRadius = 20.0
             switch finalResultLevel {
@@ -70,22 +73,13 @@ class ScoreViewController: UIViewController {
         }
     }
     
+    //広告表示設定
     private func setupAd() {
         interstitial?.fullScreenContentDelegate = self
         let request = GADRequest()
         
         //本番用広告ID
-        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3728831230250514/5361854342",request: request,completionHandler: { [self] ad, error in
-            if let error = error {
-                print("Failed to load interstitial ad with error: \(error.localizedDescription)")
-                return
-            }
-            interstitial = ad
-            interstitial?.fullScreenContentDelegate = self
-        })
-        
-        //テスト用広告ID
-//        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",request: request,completionHandler: { [self] ad, error in
+//        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3728831230250514/5361854342",request: request,completionHandler: { [self] ad, error in
 //            if let error = error {
 //                print("Failed to load interstitial ad with error: \(error.localizedDescription)")
 //                return
@@ -94,14 +88,26 @@ class ScoreViewController: UIViewController {
 //            interstitial?.fullScreenContentDelegate = self
 //        })
         
+        //テスト用広告ID
+        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",request: request,completionHandler: { [self] ad, error in
+            if let error = error {
+                print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+                return
+            }
+            interstitial = ad
+            interstitial?.fullScreenContentDelegate = self
+        })
+        
     }
     
+    //共有
     @IBAction func shareButtonAction(_ sender: Any) {
         let activityItems = ["Fun to learn English!","#QuizMatic"]
         let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
         self.present(activityVC, animated: true)
     }
     
+    //レベル選択画面に戻る
     @IBAction func toTopButtonAction(_ sender: Any) {
         if interstitial != nil {
             interstitial?.present(fromRootViewController: self)
