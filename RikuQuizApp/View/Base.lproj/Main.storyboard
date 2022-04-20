@@ -101,12 +101,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="fnL-D3-SV1"/>
                     <connections>
-                        <outlet property="levelFiveButton" destination="zuH-7x-hnS" id="OYz-Ay-QYd"/>
-                        <outlet property="levelFourButton" destination="fms-HU-T9T" id="mMC-zU-Mg8"/>
-                        <outlet property="levelOneButton" destination="hv7-9S-wNq" id="Qqe-Hw-GQt"/>
-                        <outlet property="levelThreeButton" destination="KQH-U6-opF" id="MrX-Rn-P3l"/>
-                        <outlet property="levelTwoButton" destination="Sz3-th-PCq" id="A9K-0q-MKl"/>
                         <outlet property="titleLabel" destination="w1U-HL-oTY" id="7M1-g3-RGe"/>
+                        <outletCollection property="selectLevelButton" destination="hv7-9S-wNq" collectionClass="NSMutableArray" id="aLu-g9-WY8"/>
+                        <outletCollection property="selectLevelButton" destination="Sz3-th-PCq" collectionClass="NSMutableArray" id="GI5-g7-luI"/>
+                        <outletCollection property="selectLevelButton" destination="KQH-U6-opF" collectionClass="NSMutableArray" id="obv-wz-ntG"/>
+                        <outletCollection property="selectLevelButton" destination="fms-HU-T9T" collectionClass="NSMutableArray" id="sBi-v2-ATT"/>
+                        <outletCollection property="selectLevelButton" destination="zuH-7x-hnS" collectionClass="NSMutableArray" id="NiN-JF-P7g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

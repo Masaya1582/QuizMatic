@@ -78,18 +78,10 @@ class ScoreViewController: UIViewController {
         interstitial?.fullScreenContentDelegate = self
         let request = GADRequest()
         
-        //本番用広告ID
-//        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3728831230250514/5361854342",request: request,completionHandler: { [self] ad, error in
-//            if let error = error {
-//                print("Failed to load interstitial ad with error: \(error.localizedDescription)")
-//                return
-//            }
-//            interstitial = ad
-//            interstitial?.fullScreenContentDelegate = self
-//        })
+        //        let withAdUnitID = "ca-app-pub-3728831230250514/5361854342"    // Prod
+        let withAdUnitID = "ca-app-pub-3940256099942544/4411468910"    // Test
         
-        //テスト用広告ID
-        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",request: request,completionHandler: { [self] ad, error in
+        GADInterstitialAd.load(withAdUnitID: withAdUnitID, request: request,completionHandler: { [self] ad, error in
             if let error = error {
                 print("Failed to load interstitial ad with error: \(error.localizedDescription)")
                 return
@@ -97,7 +89,6 @@ class ScoreViewController: UIViewController {
             interstitial = ad
             interstitial?.fullScreenContentDelegate = self
         })
-        
     }
     
     //共有
@@ -117,7 +108,7 @@ class ScoreViewController: UIViewController {
             self.presentingViewController?.presentingViewController?.dismiss(animated: true)
         }
     }
-
+    
 }
 
 extension ScoreViewController: UITableViewDelegate, UITableViewDataSource {
