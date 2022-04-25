@@ -78,8 +78,8 @@ class ScoreViewController: UIViewController {
         interstitial?.fullScreenContentDelegate = self
         let request = GADRequest()
         
-        //        let withAdUnitID = "ca-app-pub-3728831230250514/5361854342"    // Prod
-        let withAdUnitID = "ca-app-pub-3940256099942544/4411468910"    // Test
+        let withAdUnitID = "ca-app-pub-3728831230250514/5361854342"    // Prod
+        //        let withAdUnitID = "ca-app-pub-3940256099942544/4411468910"    // Test
         
         GADInterstitialAd.load(withAdUnitID: withAdUnitID, request: request,completionHandler: { [self] ad, error in
             if let error = error {
