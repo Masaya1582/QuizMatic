@@ -5,8 +5,6 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    //TestCommit
-    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet var selectLevelButton: [UIButton]!
     
@@ -22,6 +20,8 @@ class ViewController: UIViewController {
     private func setUpView() {
         selectLevelButton.forEach({ $0.layer.cornerRadius = 20.0 })
     }
+    
+    //TESTCOMMIT
     
     //レベル別に判断、遷移先でのボタンの色などを決定
     @IBAction func levelSelectButton(_ sender: UIButton) {
